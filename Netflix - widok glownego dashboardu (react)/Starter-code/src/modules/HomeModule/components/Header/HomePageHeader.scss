@@ -1,0 +1,25 @@
+@import "../../../../global-styles/style.scss";
+
+.home-page-header {
+    @include bg-image(100vh, 100vw, "../../../../assets/images/Wednesday_big_bgc.jpg", cover);
+    position: relative;
+    &-shadow {
+        position: absolute;
+        height: 30%;
+        width: 100%;
+        left: 0;
+        &.top {
+            top: 0;
+            background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        }
+        &.bottom {
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+        }
+    &-content {
+        @include container(650px, 0, );
+        @include center;
+        left: 64px;
+    }
+    }
+}

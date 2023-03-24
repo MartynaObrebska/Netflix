@@ -1,0 +1,50 @@
+@mixin flex($dir: row, $justify-content: center, $align-items: center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify-content;
+    align-items: $align-items;
+};
+    
+
+@mixin container($width, $padding: 0, $background-color: $color-surface-dark, $border-radius: 16px) {
+    @include flex(column, space-between, flex-start);
+    width: $width;
+    padding: $padding;
+    background-color: $background-color;
+    border-radius: $border-radius;
+};
+    
+
+@mixin bg-image($height, $width, $url, $size: contain) {
+    height: $height;
+    width: $width;
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: $size;
+    background-position: center;
+};
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+};
+    
+// Breakpoints
+@mixin mobileBreakpoint {
+    @media (max-width: $screen-mobile) {
+        @content;
+    }
+};
+@mixin tabletBreakpoint {
+    @media (max-width: $screen-tablet) {
+        @content;
+    }
+};
+@mixin smDesktopBreakpoint {
+    @media (max-width: $screen-desktop-sm) {
+        @content;
+    }
+};
+   

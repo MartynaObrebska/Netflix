@@ -1,0 +1,16 @@
+@import "../../global-styles/style.scss";
+
+.mainMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    @include flex(row, flex-start);
+    backdrop-filter: blur(8px);
+    padding: 0 64px;
+    .home {
+        background-color: transparent;
+        border: none;
+    }
+}

@@ -1,0 +1,9 @@
+@import "../../../../../global-styles/style.scss";
+
+.home-page-header-content {
+        @include container(650px);
+        position: absolute;
+        left: 64px;
+        top: 50%;
+        transform: translateY(-50%)
+    }

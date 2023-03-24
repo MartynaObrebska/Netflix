@@ -2,14 +2,16 @@
 /// Here we import all the global Styles files we need for our project.
 
 @import "styles/normalize.scss";
-@import "styles/root.scss";
 @import "styles/fonts.scss";
+@import "styles/root-variables.scss";
+@import "styles/root-mixins.scss";
+
 
 body {
-  font-family: 'Roboto', sans-serif;
-  color: var(--color-primary);
+  font-family: 'Space Grotesk', sans-serif;
+  color: $color-primary-white;
 }
 
 p {
-  color: var(--color-on-surface);
+  color: $color-primary-grey;
 }
