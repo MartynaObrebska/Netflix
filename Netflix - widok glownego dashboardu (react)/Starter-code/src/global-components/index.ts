@@ -1,1 +1,1 @@
-export * from "./MainMenuGlobalComponent/MainMenuGlobalComponent";
+export * from "./MainMenu/MainMenu";

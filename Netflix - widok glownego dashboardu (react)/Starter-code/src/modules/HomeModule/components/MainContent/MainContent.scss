@@ -1,0 +1,11 @@
+@import "../../../../global-styles/style.scss";
+
+.home-page-main-content {
+    &-container {
+        @include container(100%, 16px, transparent);
+        position: absolute;
+        left: 0;
+        top: 50%;
+    }
+        
+}

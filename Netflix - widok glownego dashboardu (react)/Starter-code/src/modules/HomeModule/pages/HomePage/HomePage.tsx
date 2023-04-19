@@ -1,11 +1,11 @@
 import React from "react";
-import { HomePageHeader } from "../../components/Header/HomePageHeader";
+import { MainPhoto } from "../../components/MainPhoto/MainPhoto";
 import "./HomePage.scss";
 
 export const HomePage: React.FC = () => {
   return (
     <>
-      <HomePageHeader />
+      <MainPhoto />
     </>
   );
 };

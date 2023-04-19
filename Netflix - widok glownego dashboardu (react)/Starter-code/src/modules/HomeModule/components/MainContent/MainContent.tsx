@@ -1,10 +1,9 @@
 import React from "react";
-import "./Content.scss";
-// import ViteSvg from "@/assets/images/vite.svg";
+import "./MainContent.scss";
 
-export const Content: React.FC = () => (
-  <div className="home-page-header-content">
-    <div className="home-page-header-content-description">
+export const MainContent: React.FC = () => (
+  <div className="home-page-main-content-container">
+    <div className="home-page-main-content">
       <div></div>
       <div className="title" />
       <p className="description">
@@ -13,6 +12,6 @@ export const Content: React.FC = () => (
         Akademii Nevermore.
       </p>
     </div>
-    <div className="home-page-header-content-buttons"></div>
+    <div className="home-page-main-content-buttons"></div>
   </div>
 );

@@ -1,9 +1,9 @@
 import React from "react";
 import { HomePage } from "@modules";
-import { MainMenuGlobalComponent } from "@/global-components";
+import { MainMenu } from "@/global-components";
 const App: React.FC = () => (
   <>
-    <MainMenuGlobalComponent />
+    <MainMenu />
     <HomePage />
   </>
 );
