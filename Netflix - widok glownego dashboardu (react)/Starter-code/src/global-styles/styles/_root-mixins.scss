@@ -99,7 +99,7 @@
 // Breakpoints
 
 @mixin mobileLandscapeBreakpoint {
-    @media (orientation: landscape) {
+    @media (orientation: landscape) and (max-width: $screen-desktop) {
         @content;
     }
 };
@@ -110,7 +110,7 @@
     }
 };
 @mixin desktopBreakpoint {
-    @media (min-width: $screen-desktop) {
+    @media (min-width: $screen-desktop) and (min-height: $screen-height-desktop){
         @content;
     }
 };

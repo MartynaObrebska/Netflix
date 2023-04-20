@@ -1,17 +1,15 @@
 @import "../../../../global-styles/style.scss";
 .home-page-main-content {
-    z-index: 1;
-    @include container(100%, 16px, transparent);
+    @include container(100%, 0 16px, transparent);
     gap: 24px;
-    position: absolute;
-    left: 0;
-    top: 50%;
+    margin-top: 40vh;
     @include mobileLandscapeBreakpoint {
+        margin-top: 50vh;
         transform: translateY(-50%)
     }
     @include tabletBreakpoint {
         transform: translateY(-50%);
-        padding: 40px;
+        padding: 0 40px;
         gap: 40px;
         @include desktopBreakpoint {
             padding: 64px;

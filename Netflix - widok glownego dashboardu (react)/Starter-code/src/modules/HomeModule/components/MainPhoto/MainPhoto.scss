@@ -1,15 +1,13 @@
 @import "../../../../global-styles/style.scss";
 
 .home-page-main-photo {
+    z-index: -1;
     @include bg-image(80vh, 100vw, "../../../../assets/images/Wednesday_big_bgc.jpg", cover);
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     @include mobileLandscapeBreakpoint {
-        height: 100vh;
-    }
-    @include desktopBreakpoint {
         height: 100vh;
     }
     &-shadow {
