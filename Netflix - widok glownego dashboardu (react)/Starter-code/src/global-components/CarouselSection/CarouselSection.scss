@@ -1,0 +1,23 @@
+@import "../../global-styles/style.scss";
+
+.carousel-section {
+    padding: 0 16px;
+    &-header {
+        @include flex(row, flex-start);
+        align-content: flex-end;
+        .title {
+            flex: 50%;
+            @include txtMobileXL;
+        }
+        .see-all{
+        border: none;
+        background-color: transparent;
+        @include flex;
+        gap: 8px;
+        @include txtMobileMd;
+        }
+    }
+    &-carousel {
+        height: 140px;
+    }
+}
