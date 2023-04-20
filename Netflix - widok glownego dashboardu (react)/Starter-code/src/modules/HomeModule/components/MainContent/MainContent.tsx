@@ -16,16 +16,18 @@ export const MainContent: React.FC = () => {
 
   return (
     <div className="home-page-main-content">
-      <div className="note">
-        <img src={Top10Img} className="top10" alt="top10" />
-        <p>Nr 5 wśród seriali dzisiaj</p>
+      <div className="content">
+        <div className="note">
+          <img src={Top10Img} className="top10" alt="top10" />
+          <p>Nr 5 wśród seriali dzisiaj</p>
+        </div>
+        <img src={WednesdayLogo} className="title" alt="Wednesday logo" />
+        <p className="description">
+          Makabrycznie bystra i sarkastyczna Wednesday Addams prowadzi śledztwo
+          w sprawie serii zabójstw, przysparzając sobie nowych przyjaciół i
+          wrogów w Akademii Nevermore.
+        </p>
       </div>
-      <img src={WednesdayLogo} className="title" alt="Wednesday logo" />
-      <p className="description">
-        Makabrycznie bystra i sarkastyczna Wednesday Addams prowadzi śledztwo w
-        sprawie serii zabójstw, przysparzając sobie nowych przyjaciół i wrogów w
-        Akademii Nevermore.
-      </p>
       <div className="buttons">
         <Button
           className="white"

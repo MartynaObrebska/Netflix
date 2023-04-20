@@ -12,7 +12,8 @@ body, p, h1, h2 {
   color: $color-primary-white;
   margin: 0;
   padding: 0;
-  letter-spacing: .01em;
+  letter-spacing: normal;
+  line-height: 1.2em;
 }
 
 body {

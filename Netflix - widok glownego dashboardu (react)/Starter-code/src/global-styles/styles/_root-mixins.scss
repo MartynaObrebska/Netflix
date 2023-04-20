@@ -61,7 +61,7 @@
 };
 
 // Tablet, Desktop
-@mixin txtTDesktopxl {
+@mixin txtTDesktopXl {
     font-size: 24px;
     font-weight: 700;
 };
@@ -73,7 +73,7 @@
 
 @mixin txtDesktopLg {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 400;
 };
 
 @mixin txtDesktopMd {
@@ -97,8 +97,15 @@
 };
 
 // Breakpoints
+
+@mixin mobileLandscapeBreakpoint {
+    @media (orientation: landscape) {
+        @content;
+    }
+};
+
 @mixin tabletBreakpoint {
-    @media (min-width: $screen-tablet) {
+    @media (min-width: $screen-tablet) and (min-height: $screen-height-tablet) {
         @content;
     }
 };

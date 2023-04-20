@@ -1,5 +1,4 @@
 @import "../../../../global-styles/style.scss";
-
 .home-page-main-content {
     z-index: 1;
     @include container(100%, 16px, transparent);
@@ -7,28 +6,60 @@
     position: absolute;
     left: 0;
     top: 50%;
+    @include mobileLandscapeBreakpoint {
+        transform: translateY(-50%)
+    }
     @include tabletBreakpoint {
         transform: translateY(-50%);
         padding: 40px;
+        gap: 40px;
+        @include desktopBreakpoint {
+            padding: 64px;
+        }
     }
-    .title {
-        height: 70px;
+    .content {
+        @include flex(column, flex-start, flex-start);
+        gap: 16px;
         @include tabletBreakpoint {
-            height: 112px;
+            gap: 24px;
         }
-    }
-    .note {
-        display: flex;
-        flex-direction: row;
-        column-gap: 16px;
-        align-items: center;
+        .note {
+            @include flex;
+            column-gap: 16px;
+            img {
+                height: 32px;
+                @include tabletBreakpoint {
+                    height: 40px;
+                }
+            }
+            p {
+                @include txtMobileLg;
+                @include tabletBreakpoint {
+                    @include txtDesktopXl;
+                }
+            }
+        }
+        .title {
+            height: 70px;
+            @include tabletBreakpoint {
+                height: 112px;
+                @include desktopBreakpoint {
+                    height: 172px;
+                }
+            }
+        }
         p {
-            @include txtMobileLg
-        }
-    }
-    p {
-        @include txtMobileXs;
-    }    
+            @include txtMobileXs;
+            @include mobileLandscapeBreakpoint {
+                width: 650px;}
+            @include tabletBreakpoint {
+                width: 75%;
+                @include txtDesktopLg;
+                width: 570px
+            }
+        } 
+        
+    } 
     .buttons {
         @include flex;
         gap: 12px;
