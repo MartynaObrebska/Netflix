@@ -1,12 +1,14 @@
 @import "../../../../global-styles/style.scss";
 
 .home-page-main-photo {
-    @include bg-image(100%, 100%, "../../../../assets/images/Wednesday_big_bgc.jpg", cover);
+    @include bg-image(90vh, 100vw, "../../../../assets/images/Wednesday_big_bgc.jpg", cover);
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 20vh;
+    @include tabletBreakpoint {
+        height: 100vh;
+    }
     &-shadow {
         position: absolute;
         height: 20%;

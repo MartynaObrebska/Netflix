@@ -7,12 +7,14 @@
 @import "styles/root-mixins.scss";
 
 
-body {
+body, p, h1, h2 {
   font-family: 'Space Grotesk', sans-serif;
   color: $color-primary-white;
-  background-color: $color-backround;
+  margin: 0;
+  padding: 0;
+  letter-spacing: .01em;
 }
 
-p {
-  color: $color-primary-grey;
+body {
+  background-color: $color-backround;
 }

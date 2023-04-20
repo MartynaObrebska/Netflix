@@ -7,6 +7,7 @@
     
 
 @mixin container($width, $padding: 0, $background-color: $color-surface-dark, $border-radius: 16px) {
+    box-sizing: border-box;
     @include flex(column, space-between, flex-start);
     width: $width;
     padding: $padding;
@@ -56,7 +57,7 @@
 
 @mixin txtMobileXs {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
 };
 
 // Tablet, Desktop
@@ -96,18 +97,13 @@
 };
 
 // Breakpoints
-@mixin mobileBreakpoint {
-    @media (max-width: $screen-mobile) {
-        @content;
-    }
-};
 @mixin tabletBreakpoint {
-    @media (max-width: $screen-tablet) {
+    @media (min-width: $screen-tablet) {
         @content;
     }
 };
-@mixin smDesktopBreakpoint {
-    @media (max-width: $screen-desktop-sm) {
+@mixin desktopBreakpoint {
+    @media (min-width: $screen-desktop) {
         @content;
     }
 };

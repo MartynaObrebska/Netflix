@@ -1,0 +1,19 @@
+@import "../../global-styles/style.scss";
+
+.button {
+    border: none;
+    border-radius: 400px;
+    padding: 18.5px 16px;
+    @include flex;
+    gap: 8px;
+    @include txtMobileMd;
+    &.white {
+        background-color: $color-primary-white;
+        color: $color-backround;
+    }
+    &.grey {
+        background: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(4px);
+        color: $color-primary-white;
+    }
+}
