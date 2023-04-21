@@ -10,6 +10,10 @@
     @include flex(row, flex-start);
     padding: 0 16px;
     background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    transition: .3s;
+    &.active {
+        background: $color-backround;
+    }
     .home {
         background-color: transparent;
         border: none;
