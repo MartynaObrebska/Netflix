@@ -2,11 +2,13 @@
 
 .carousel-section {
     padding: 0 16px;
+    @include flex(column, flex-end, stretch);
+    gap: 16px;
     &-header {
-        @include flex(row, flex-start);
-        align-content: flex-end;
+        @include flex(row, space-between, flex-end);
+        
         .title {
-            flex: 50%;
+            width: 140px;
             @include txtMobileXL;
         }
         .see-all{
@@ -15,9 +17,9 @@
         @include flex;
         gap: 8px;
         @include txtMobileMd;
+        &:hover {
+            p {text-decoration: underline;}
         }
-    }
-    &-carousel {
-        height: 140px;
+        }
     }
 }

@@ -6,9 +6,14 @@ import ReactSimplyCarousel from "react-simply-carousel";
 type CarouselSectionProps = {
   title: string;
   slides: JSX.Element[];
+  top10?: boolean;
 };
 
-export const CarouselSection = ({ title, slides }: CarouselSectionProps) => {
+export const CarouselSection = ({
+  title,
+  slides,
+  top10,
+}: CarouselSectionProps) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   return (
     <div className="carousel-section">
@@ -16,13 +21,13 @@ export const CarouselSection = ({ title, slides }: CarouselSectionProps) => {
         <h1 className="title">{title}</h1>
         <button className="see-all">
           <p>Zobacz wszystkie</p>
-          <ArrowRight2 size="20" color="#fff" />
+          <ArrowRight2 size="14" color="#fff" />
         </button>
       </div>
       <ReactSimplyCarousel
         activeSlideIndex={activeSlideIndex}
         onRequestChange={setActiveSlideIndex}
-        infinite
+        infinite={!top10}
         containerProps={{
           style: {
             width: "100%",

@@ -2,4 +2,6 @@
 
 .carousels {
     margin-top: 56px;
+    @include flex(column, flex-start, stretch);
+    gap:40px;
 }
