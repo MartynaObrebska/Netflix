@@ -1,0 +1,10 @@
+@import "../../global-styles/style.scss";
+
+.footer {
+    height: 100px;
+    text-align: center;
+    p{
+        line-height: 100px;
+        color: $color-primary-grey;
+    }
+}
