@@ -4,21 +4,6 @@
 .slide-tile-container {
     @include flex(row, space-between, flex-start);
     gap: 16px;
-    .slide-tile-rank {
-        font-size: 80px;
-        font-weight: 600;
-        color: $color-backround;
-        text-shadow:  -1px 0 $color-primary-white, 0 1px $color-primary-white, 1px 0 $color-primary-white, 0 -1px $color-primary-white;
-        &.rank1 {
-            text-shadow: -1px 0 $color-gold, 0 1px $color-gold, 1px 0 $color-gold, 0 -1px $color-gold;
-        }
-        &.rank2 {
-            text-shadow: -1px 0 $color-silver, 0 1px $color-silver, 1px 0 $color-silver, 0 -1px $color-silver;
-        }
-        &.rank3 {
-            text-shadow: -1px 0 $color-brown, 0 1px $color-brown, 1px 0 $color-brown, 0 -1px $color-brown;
-        }
-    }
     .slide-tile{
         position: relative;
         margin-right: 8px;
@@ -27,8 +12,25 @@
         border-radius: 14px;
         overflow: hidden;
         @include tabletBreakpoint {
+            height: 164px;
+            width: 256px;
             @include desktopBreakpoint {
                 border-radius: 16px;
+            }
+        }
+        &-rank {
+            font-size: 80px;
+            font-weight: 600;
+            color: $color-backround;
+            text-shadow:  -1px 0 $color-primary-white, 0 1px $color-primary-white, 1px 0 $color-primary-white, 0 -1px $color-primary-white;
+            &.rank1 {
+                text-shadow: -1px 0 $color-gold, 0 1px $color-gold, 1px 0 $color-gold, 0 -1px $color-gold;
+            }
+            &.rank2 {
+                text-shadow: -1px 0 $color-silver, 0 1px $color-silver, 1px 0 $color-silver, 0 -1px $color-silver;
+            }
+            &.rank3 {
+                text-shadow: -1px 0 $color-brown, 0 1px $color-brown, 1px 0 $color-brown, 0 -1px $color-brown;
             }
         }
         &.top10 {

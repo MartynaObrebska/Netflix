@@ -4,15 +4,14 @@
     gap: 24px;
     margin-top: 40vh;
     @include mobileLandscapeBreakpoint {
-        margin-top: 50vh;
-        transform: translateY(-50%)
+        margin-top: 25vh;
     }
     @include tabletBreakpoint {
-        transform: translateY(-50%);
+        margin-top: 25vh;
         padding: 0 40px;
         gap: 40px;
         @include desktopBreakpoint {
-            padding: 64px;
+            padding: 0 64px;
         }
     }
     .content {

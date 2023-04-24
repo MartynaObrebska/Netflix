@@ -4,4 +4,8 @@
     margin-top: 56px;
     @include flex(column, flex-start, stretch);
     gap:40px;
+    @include tabletBreakpoint {
+        margin-top: 88px;
+        gap:64px;
+    }
 }

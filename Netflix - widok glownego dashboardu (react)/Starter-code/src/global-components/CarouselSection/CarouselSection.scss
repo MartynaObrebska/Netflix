@@ -4,22 +4,55 @@
     padding: 0 16px;
     @include flex(column, flex-end, stretch);
     gap: 16px;
+    @include tabletBreakpoint {
+        padding: 0 40px;
+        gap: 32px;
+        @include txtDesktopXl;
+        @include desktopBreakpoint {
+            padding: 0 56px;
+        }
+    }
     &-header {
         @include flex(row, space-between, flex-end);
-        
         .title {
             width: 140px;
-            @include txtMobileXL;
+            @include txtMobileXl;
+            @include tabletBreakpoint {
+                width: auto;
+                @include txtDesktopXl;
+            }
         }
         .see-all{
-        border: none;
-        background-color: transparent;
-        @include flex;
-        gap: 8px;
-        @include txtMobileMd;
-        &:hover {
-            p {text-decoration: underline;}
-        }
+            border: none;
+            background-color: transparent;
+            @include flex;
+            gap: 8px;
+            @include txtMobileMd;
+            p {
+                text-decoration: underline;
+            }
+            .arrow {
+                &.big {
+                    display: none;
+                }
+            }
+            @include tabletBreakpoint {
+                @include txtDesktopMd;
+                .arrow { 
+                    &.big {
+                        display: block;
+                    }
+                    &.small {
+                        display: none;
+                    }
+                }
+                @include desktopBreakpoint {
+                        p {text-decoration: none;}
+                    &:hover {
+                        p {text-decoration: underline;}
+                    }
+                }
+            }
         }
     }
 }

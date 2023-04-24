@@ -21,7 +21,8 @@ export const CarouselSection = ({
         <h1 className="title">{title}</h1>
         <button className="see-all">
           <p>Zobacz wszystkie</p>
-          <ArrowRight2 size="14" color="#fff" />
+          <ArrowRight2 className="arrow small" size="14" color="#fff" />
+          <ArrowRight2 className="arrow big" size="16" color="#fff" />
         </button>
       </div>
       <ReactSimplyCarousel
