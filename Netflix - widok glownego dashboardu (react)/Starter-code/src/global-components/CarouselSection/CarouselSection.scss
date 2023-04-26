@@ -26,6 +26,7 @@
         }
         .see-all{
             border: none;
+            color: $color-primary-white;
             background-color: transparent;
             @include flex;
             gap: 8px;

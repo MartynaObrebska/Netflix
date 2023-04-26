@@ -23,12 +23,10 @@ export const CarouselSection = ({
           <ArrowRight2
             className="arrow small"
             size="14"
-            color="$color-primary-white"
           />
           <ArrowRight2
             className="arrow big"
             size="16"
-            color="$color-primary-white"
           />
         </button>
       </div>
