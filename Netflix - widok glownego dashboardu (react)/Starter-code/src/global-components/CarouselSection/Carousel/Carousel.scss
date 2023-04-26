@@ -3,7 +3,7 @@
     overflow: hidden;
     &> div > div {
         height: 140px;
-        width: 100vw;
+        width: 100%;
         @include tabletBreakpoint {
             height: 164px;
         }
