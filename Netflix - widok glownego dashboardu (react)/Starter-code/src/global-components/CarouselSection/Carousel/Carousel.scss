@@ -1,0 +1,55 @@
+@import "../../../global-styles/style.scss";
+.carousel {
+    overflow: hidden;
+    &> div > div {
+        height: 140px;
+        width: 100vw;
+        @include tabletBreakpoint {
+            height: 164px;
+        }
+        &> div {
+            position: absolute;
+            top: 0;
+            left: 16px;
+            @include tabletBreakpoint {
+                left: 40px;
+                @include desktopBreakpoint {
+                    left: 56px;
+                }
+            }
+        }
+    }
+    &.top10 > div > div {
+        height: 188px;
+    }
+    &.active{
+        &> div > div > div {
+            @include tabletBreakpoint {
+                left: 130px;
+            }
+        }
+        &.top10 > div > div > div {
+            @include tabletBreakpoint {
+                left: 0;
+            }
+        }
+    } 
+    
+    .back-nav-hidden {
+        width: 16px;
+        height: 140px;
+        background-color: $color-backround;
+        height: 100%;
+        @include tabletBreakpoint {
+            width: 40px;
+            height: 164px;
+            @include desktopBreakpoint {
+                width: 56px;
+            }
+        }
+    }
+    button:disabled div,
+button[disabled] div {
+    display: none;
+}
+}    

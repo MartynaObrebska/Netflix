@@ -1,19 +1,21 @@
 @import "../../global-styles/style.scss";
 
 .carousel-section {
-    padding: 0 16px;
     @include flex(column, flex-end, stretch);
     gap: 16px;
     @include tabletBreakpoint {
-        padding: 0 40px;
         gap: 32px;
         @include txtDesktopXl;
-        @include desktopBreakpoint {
-            padding: 0 56px;
-        }
     }
     &-header {
+        padding: 0 16px;
         @include flex(row, space-between, flex-end);
+        @include tabletBreakpoint {
+            padding: 0 40px;
+            @include desktopBreakpoint {
+                padding: 0 56px;
+            }
+        }
         .title {
             width: 140px;
             @include txtMobileXl;

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./CarouselSection.scss";
 import { ArrowRight2 } from "iconsax-react";
-import ReactSimplyCarousel from "react-simply-carousel";
+import { Carousel } from "./Carousel/Carousel";
 
 type CarouselSectionProps = {
   title: string;
@@ -14,32 +14,25 @@ export const CarouselSection = ({
   slides,
   top10,
 }: CarouselSectionProps) => {
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   return (
     <div className="carousel-section">
       <div className="carousel-section-header">
         <h1 className="title">{title}</h1>
         <button className="see-all">
           <p>Zobacz wszystkie</p>
-          <ArrowRight2 className="arrow small" size="14" color="#fff" />
-          <ArrowRight2 className="arrow big" size="16" color="#fff" />
+          <ArrowRight2
+            className="arrow small"
+            size="14"
+            color="$color-primary-white"
+          />
+          <ArrowRight2
+            className="arrow big"
+            size="16"
+            color="$color-primary-white"
+          />
         </button>
       </div>
-      <ReactSimplyCarousel
-        activeSlideIndex={activeSlideIndex}
-        onRequestChange={setActiveSlideIndex}
-        infinite={!top10}
-        containerProps={{
-          style: {
-            width: "100%",
-            justifyContent: "space-between",
-            userSelect: "none",
-            position: "relative",
-          },
-        }}
-      >
-        {slides}
-      </ReactSimplyCarousel>
+      <Carousel slides={slides} top10={top10} />
     </div>
   );
 };

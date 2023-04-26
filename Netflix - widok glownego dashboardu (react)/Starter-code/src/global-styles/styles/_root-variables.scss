@@ -2,14 +2,17 @@
 /// Here we define all the root variables we need for our project.
 /// For examples see Material Design color system: https://m2.material.io/design/color/the-color-system.html
 
-// colors
+// colors - main
 $color-primary-white: #fff;
 $color-secondary-white: #E8E8E8;
 $color-primary-grey: #767676;
 $color-secondary: #DE4129;
+// colors - surfaces
 $color-backround: #000;
 $color-surface-dark: #1A1A1A;
 $color-surface-light: #242424;
+$color-transparent-surface: rgba(255, 255, 255, 0.2);
+//colors - suplementary
 $color-borders: #2D2D2D;
 $color-gold: #E7BF35;
 $color-silver: #909090;
