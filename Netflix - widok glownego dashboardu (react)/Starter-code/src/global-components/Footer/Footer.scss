@@ -3,6 +3,15 @@
 .footer {
     height: 100px;
     text-align: center;
+    color: $color-primary-white;
+    .social-media {
+        @include flex;
+        gap: 16px;
+        &-icon {
+            height: 30px;
+            width: 30px;
+        }
+    }
     p{
         line-height: 100px;
         color: $color-primary-grey;

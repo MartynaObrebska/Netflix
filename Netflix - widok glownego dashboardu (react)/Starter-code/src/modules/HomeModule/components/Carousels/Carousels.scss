@@ -1,11 +1,11 @@
 @import "../../../../global-styles/style.scss";
 
 .carousels {
-    margin-top: 56px;
+    margin: 56px 0;
     @include flex(column, flex-start, stretch);
     gap:40px;
     @include tabletBreakpoint {
-        margin-top: 88px;
+        margin: 88px 0;
         gap:64px;
     }
 }
