@@ -1,21 +1,35 @@
 @import "../../global-styles/style.scss";
 
 .button {
-    border: none;
+    border: 1px solid;
     border-radius: 400px;
-    padding: 18px 16px;
+    padding: 17px 15px;
     @include flex;
     gap: 8px;
     @include txtMobileMd;
     @include tabletBreakpoint {
-        padding: 18px 40px;
+        padding: 17px 39px;
     }
     &.white {
         background-color: $color-primary-white;
         color: $color-backround;
+        border-color: $color-primary-white
     }
     &.grey {
-        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        background: $color-transparent-surface;
         color: $color-primary-white;
+        padding: 18px 16px;
+        @include tabletBreakpoint {
+            padding: 18px 40px;
+        }
+    }
+    &.transparent {
+        background: transparent;
+        color: $color-primary-white;
+        border-color: $color-border-light
+    }
+    &.circle {
+        padding: 9px;
     }
 }

@@ -7,11 +7,21 @@ type ButtonProps = {
   className: "white" | "grey" | "transparent";
   content: string;
   onClick: () => void;
+  circle?: boolean;
 };
 
-export const Button = ({ className, content, onClick, icon }: ButtonProps) => {
+export const Button = ({
+  className,
+  content,
+  onClick,
+  icon,
+  circle,
+}: ButtonProps) => {
   return (
-    <button className={`button ${className}`} onClick={onClick}>
+    <button
+      className={`button ${className} ${circle ? "circle" : ""}`}
+      onClick={onClick}
+    >
       {icon}
       {content}
     </button>

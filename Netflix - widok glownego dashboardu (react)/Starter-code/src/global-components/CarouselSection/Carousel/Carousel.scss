@@ -1,6 +1,5 @@
 @import "../../../global-styles/style.scss";
 .carousel {
-    overflow: hidden;
     &> div > div {
         height: 140px;
         width: 100%;
@@ -47,8 +46,7 @@
             }
         }
     }
-    button:disabled div,
-button[disabled] div {
-    display: none;
-}
+    button:disabled div, button[disabled] div {
+        display: none;
+    }
 }    

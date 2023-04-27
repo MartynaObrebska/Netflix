@@ -1,6 +1,7 @@
 @import "../../../../global-styles/style.scss";
 
 .carousels {
+    width: 100%;
     margin: 56px 0;
     @include flex(column, flex-start, stretch);
     gap:40px;

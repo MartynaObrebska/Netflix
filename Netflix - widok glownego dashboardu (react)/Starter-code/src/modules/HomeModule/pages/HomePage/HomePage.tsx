@@ -5,10 +5,10 @@ import { MainContent } from "../../components/MainContent/MainContent";
 import { Carousels } from "../../components/Carousels/Carousels";
 export const HomePage: React.FC = () => {
   return (
-    <>
+    <div className="home-page">
       <MainPhoto />
       <MainContent />
       <Carousels />
-    </>
+    </div>
   );
 };

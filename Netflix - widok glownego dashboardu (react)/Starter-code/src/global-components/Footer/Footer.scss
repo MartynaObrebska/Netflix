@@ -1,7 +1,6 @@
 @import "../../global-styles/style.scss";
 
 .footer {
-    height: 100px;
     text-align: center;
     .social-media {
         @include flex;
