@@ -1,0 +1,21 @@
+@import "../../../global-styles/style.scss";
+
+.video-pop-up {
+    display: none;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-backround;
+    &.active {
+        display: block;
+    }
+    &-back-btn {
+        position: absolute;
+        top: 56px;
+        left: 56px;
+        color: $color-primary-white;
+    }       
+}

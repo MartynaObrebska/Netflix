@@ -4,10 +4,14 @@ import Top10Img from "@/assets/images/top10.png";
 import WednesdayLogo from "@/assets/images/logo_wednesday.png";
 import { Button } from "@/global-components/Buttons/Button/Button";
 import { Play, InfoCircle } from "iconsax-react";
+import { useAppDispatch } from "@/app/hooks";
+import { setActive } from "@/app/Stores/reducers/Video/videoSlice";
 
 export const MainContent: React.FC = () => {
+  const dispatch = useAppDispatch();
+
   const handlePlayClick = () => {
-    console.log("Play");
+    dispatch(setActive(true));
   };
 
   const handleMoreInfoClick = () => {
