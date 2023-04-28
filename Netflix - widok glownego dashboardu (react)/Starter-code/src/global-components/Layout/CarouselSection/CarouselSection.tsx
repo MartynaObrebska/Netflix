@@ -1,7 +1,7 @@
 import React from "react";
 import "./CarouselSection.scss";
 import { ArrowRight2 } from "iconsax-react";
-import { Carousel } from "./Carousel/Carousel";
+import { Carousel } from "../Carousel/Carousel";
 
 type CarouselSectionProps = {
   title: string;
@@ -20,14 +20,8 @@ export const CarouselSection = ({
         <h1 className="title">{title}</h1>
         <button className="see-all">
           <p>Zobacz wszystkie</p>
-          <ArrowRight2
-            className="arrow small"
-            size="14"
-          />
-          <ArrowRight2
-            className="arrow big"
-            size="16"
-          />
+          <ArrowRight2 className="arrow small" size="14" />
+          <ArrowRight2 className="arrow big" size="16" />
         </button>
       </div>
       <Carousel slides={slides} top10={top10} />

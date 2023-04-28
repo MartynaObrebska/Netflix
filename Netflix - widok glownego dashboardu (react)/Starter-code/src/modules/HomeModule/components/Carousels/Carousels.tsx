@@ -1,6 +1,6 @@
 import React from "react";
 import "./Carousels.scss";
-import { CarouselSection } from "@/global-components/CarouselSection/CarouselSection";
+import { CarouselSection } from "@/global-components/Layout/CarouselSection/CarouselSection";
 import image1 from "@/assets/images/385509_Peaky_Blinders_jpg_80_resize_1155x664 1.png";
 import image2 from "@/assets/images/amzon-prime-video-oficjalny-zwiastun-finalowego-sezonu-vikings-wikingowie 1.png";
 import image3 from "@/assets/images/breaking_bad 1.png";
