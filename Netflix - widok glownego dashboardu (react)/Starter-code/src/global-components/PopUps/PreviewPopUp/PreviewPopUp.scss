@@ -1,0 +1,41 @@
+@import "../../../global-styles/style.scss";
+
+.preview-container {
+    display: none;
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2100px;
+    overflow: hidden;
+    &.active {
+        display: block;
+    }
+    .preview {
+        position: absolute;
+        top: 56px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 900px;
+        height: 2000px;
+        background-color: $color-surface-dark;
+        border-radius: 16px;
+        overflow: hidden;
+        &-close-btn {
+            position: absolute;
+            top: 56px;
+            right: 56px;
+            color: $color-primary-grey;
+        } 
+        &-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(2px);
+            background-color: $color-transparent-surface-black;
+        }      
+    }
+}

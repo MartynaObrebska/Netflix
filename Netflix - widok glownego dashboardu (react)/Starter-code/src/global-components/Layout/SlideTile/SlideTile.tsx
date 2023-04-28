@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SlideTile.scss";
-import { LittlePopUp } from "../../PopUps/LittlePopUp/LitltePopUp";
+import { LittlePopUp } from "../../PopUps/LittlePopUp/LittlePopUp";
 
 type SlideTileProps = {
   image: string;

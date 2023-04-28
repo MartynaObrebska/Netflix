@@ -5,6 +5,8 @@ import { ArrowDown2 } from "iconsax-react";
 import { LikeBtn } from "@/global-components/Buttons/LikeBtn/LikeBtn";
 import { AddBtn } from "@/global-components/Buttons/AddBtn/AddBtn";
 import { PlayBtn } from "@/global-components/Buttons/PlayBtn/PlayBtn";
+import { useAppDispatch } from "@/app/hooks";
+import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
 
 type LittlePopUpProps = {
   image: string;
@@ -14,10 +16,13 @@ type LittlePopUpProps = {
 };
 
 export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
-  const popUpClassName = `little-pop-up ${active ? "active" : ""}`;
-  const handlePlayClick = () => {
-    console.log("click");
+  const dispatch = useAppDispatch();
+
+  const handlePreviewClick = () => {
+    dispatch(setPreviewActive(true));
   };
+  const popUpClassName = `little-pop-up ${active ? "active" : ""}`;
+
   const handleLikeClick = () => {
     console.log("like");
   };
@@ -40,7 +45,7 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
           <Button
             className="transparent"
             content=""
-            onClick={handlePlayClick}
+            onClick={handlePreviewClick}
             icon={<ArrowDown2 size="14" />}
             circle={true}
           />

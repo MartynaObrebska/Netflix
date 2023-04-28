@@ -6,6 +6,7 @@ import { Button } from "@/global-components/Buttons/Button/Button";
 import { Play, InfoCircle } from "iconsax-react";
 import { useAppDispatch } from "@/app/hooks";
 import { setActive } from "@/app/Stores/reducers/Video/videoSlice";
+import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
 
 export const MainContent: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -15,7 +16,7 @@ export const MainContent: React.FC = () => {
   };
 
   const handleMoreInfoClick = () => {
-    console.log("More info");
+    dispatch(setPreviewActive(true));
   };
 
   return (
