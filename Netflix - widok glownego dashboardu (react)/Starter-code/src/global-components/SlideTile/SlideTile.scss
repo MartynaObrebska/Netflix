@@ -2,13 +2,7 @@
 
 .container {
     position: relative;
-    height: 140px;
-    width: 218px;
     cursor: pointer;
-    @include tabletBreakpoint {
-        height: 164px;
-        width:264px;
-    }
     .slide-tile-container {
         @include flex(row, space-between, flex-start);
         gap: 16px;
