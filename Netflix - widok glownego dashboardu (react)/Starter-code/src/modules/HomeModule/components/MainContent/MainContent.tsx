@@ -2,7 +2,7 @@ import React from "react";
 import "./MainContent.scss";
 import Top10Img from "@/assets/images/top10.png";
 import WednesdayLogo from "@/assets/images/logo_wednesday.png";
-import { Button } from "@/global-components/Button/Button";
+import { Button } from "@/global-components/Buttons/Button/Button";
 import { Play, InfoCircle } from "iconsax-react";
 
 export const MainContent: React.FC = () => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Carousel.scss";
 import ReactSimplyCarousel from "react-simply-carousel";
-import { NavCarouselBtn } from "../NavCarouselBtn/NavCarouselBtn";
+import { NavCarouselBtn } from "../../Buttons/NavCarouselBtn/NavCarouselBtn";
 import {
   screenXs,
   screenSm,

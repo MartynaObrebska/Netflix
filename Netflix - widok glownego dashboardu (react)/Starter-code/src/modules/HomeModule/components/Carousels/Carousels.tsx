@@ -7,7 +7,7 @@ import image3 from "@/assets/images/breaking_bad 1.png";
 import image4 from "@/assets/images/lucyfer-czolo 1.png";
 import image5 from "@/assets/images/The-Office-serial 1.png";
 import image6 from "@/assets/images/TWD-1024x575 1.png";
-import { SlideTile } from "@/global-components/SlideTile/SlideTile";
+import { SlideTile } from "@/global-components/Layout/SlideTile/SlideTile";
 
 export const Carousels = () => {
   const generateSlides = (

@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import "./NavCarouselBtn.scss";
 import { IconProps } from "iconsax-react";
-import { Button } from "@/global-components/Button/Button";
+import { Button } from "@/global-components/Buttons/Button/Button";
 
 type NavCarouselBtnProps = {
   back?: boolean;

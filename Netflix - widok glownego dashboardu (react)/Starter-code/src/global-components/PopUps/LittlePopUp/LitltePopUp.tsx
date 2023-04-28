@@ -1,7 +1,8 @@
 import React, { ReactElement } from "react";
 import "./LittlePopUp.scss";
-import { Button } from "../Button/Button";
-import { Add, ArrowDown2, IconProps, Like1, Play } from "iconsax-react";
+import { Button } from "../../Buttons/Button/Button";
+import { Add, ArrowDown2, IconProps, Play } from "iconsax-react";
+import { LikeBtn } from "@/global-components/Buttons/LikeBtn/LikeBtn";
 
 type LittlePopUpProps = {
   image: string;
@@ -13,9 +14,13 @@ type LittlePopUpProps = {
 export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
   const popUpClassName = `little-pop-up ${active ? "active" : ""}`;
   const handlePlayClick = () => {
-    console.log();
+    console.log("click");
+  };
+  const handleLikeClick = () => {
+    console.log("like");
   };
 
+  const buttonsClassName = "transparent";
   const buttonsProps: {
     className: "white" | "grey" | "transparent";
     content: string;
@@ -34,12 +39,6 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
       onClick: handlePlayClick,
       icon: <Add size="16" />,
     },
-    {
-      className: "transparent",
-      content: "",
-      onClick: handlePlayClick,
-      icon: <Like1 size="14" />,
-    },
   ];
   const buttons = buttonsProps.map((button, index) => (
     <Button
@@ -57,7 +56,13 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
       <img className="little-pop-up-image" src={image} />
       <div className="little-pop-up-text">
         <div className="little-pop-up-text-buttons">
-          <div className="little-pop-up-text-buttons-group">{buttons}</div>
+          <div className="little-pop-up-text-buttons-group">
+            {buttons}
+            <LikeBtn
+              handleOnClick={handleLikeClick}
+              className={buttonsClassName}
+            />
+          </div>
           <Button
             className="transparent"
             content=""
