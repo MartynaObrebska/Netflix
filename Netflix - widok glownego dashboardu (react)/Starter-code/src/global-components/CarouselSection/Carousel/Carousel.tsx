@@ -9,6 +9,7 @@ import {
   screenLg,
   screenXl,
 } from "@/utility/breakpoints";
+import { ArrowRight2, ArrowLeft2 } from "iconsax-react";
 
 type CarouselProps = {
   slides: JSX.Element[];
@@ -42,7 +43,11 @@ export const Carousel = ({ slides, top10 }: CarouselProps) => {
         }}
         forwardBtnProps={{
           children: (
-            <NavCarouselBtn handleOnClick={handleOnClick} top10={top10} />
+            <NavCarouselBtn
+              handleOnClick={handleOnClick}
+              top10={top10}
+              icon={<ArrowRight2 />}
+            />
           ),
           style: {
             zIndex: 3,
@@ -58,7 +63,14 @@ export const Carousel = ({ slides, top10 }: CarouselProps) => {
             activeSlideIndex === 0 && !isCarouselActive ? (
               <div className="back-nav-hidden" />
             ) : (
-              <NavCarouselBtn back={true} top10={top10} />
+              <NavCarouselBtn
+                back={true}
+                top10={top10}
+                icon={<ArrowLeft2 />}
+                handleOnClick={() => {
+                  console.log("back");
+                }}
+              />
             ),
           style: {
             zIndex: 3,

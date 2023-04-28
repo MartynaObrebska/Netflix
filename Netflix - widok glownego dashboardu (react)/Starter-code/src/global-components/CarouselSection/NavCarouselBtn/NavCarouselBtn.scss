@@ -1,43 +1,33 @@
 @import "../../../global-styles/style.scss";
 
-.nav-carousel-button {
+.nav-carousel-button-shadow {
     display: none;
     @include tabletBreakpoint {
         display: block;
-        position: absolute;
-        top: 50%;
-        right: 36px;
-        transform: translateY(-50%);
-        width: 48px;
-        height: 48px;
-        border-radius: 100%;
-        border: none;
-        background-color: $color-transparent-surface;
-        backdrop-filter: blur(4px);
-        color: $color-primary-white;
-        svg {
-            padding: 16px;
+        position: relative;
+        height: 164px;
+        width: 128px;
+        background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        @include desktopBreakpoint {
+            width: 160px;
         }
         &.back {
-            right: auto;
-            left: 36px;
-            transform: translateY(-50%) rotate(180deg);
+            background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
         }
-        &-shadow {
-            display: none;
-            @include tabletBreakpoint {
-                display: block;
-                position: relative;
-                height: 164px;
-                width: 130px;
-                background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
-                &.back {
-                    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
-                }
-                &.top10 {
-                    height: 188px;
-                }
-            }
+        &.top10 {
+            height: 188px;
+        }
+    }
+    .button {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 48px;
+        height: 48px;
+        @include tabletBreakpoint {
+            display: block;
         }
     } 
 }

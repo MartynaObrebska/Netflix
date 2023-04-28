@@ -13,21 +13,31 @@
     &.white {
         background-color: $color-primary-white;
         color: $color-backround;
-        border-color: $color-primary-white
+        border-color: $color-primary-white;
+        &:hover {
+            background-color: $color-secondary-white;
+        }
     }
     &.grey {
         border: none;
         background: $color-transparent-surface;
         color: $color-primary-white;
+        backdrop-filter: blur(4px);
         padding: 18px 16px;
         @include tabletBreakpoint {
             padding: 18px 40px;
+        }
+        &:hover {
+            background-color: $color-transparent-surface-hover;
         }
     }
     &.transparent {
         background: transparent;
         color: $color-primary-white;
-        border-color: $color-border-light
+        border-color: $color-border-light;
+        &:hover {
+            border-color: $color-border-light-hover;
+        }
     }
     &.circle {
         padding: 9px;
