@@ -1,0 +1,11 @@
+@import "../../../global-styles/style.scss";
+.add-btn {
+    &.active {
+        .button {
+            padding: 0;
+        }
+    }
+    .button {
+        padding: 6px;
+    }
+}

@@ -1,8 +1,10 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import "./LittlePopUp.scss";
 import { Button } from "../../Buttons/Button/Button";
-import { Add, ArrowDown2, IconProps, Play } from "iconsax-react";
+import { ArrowDown2 } from "iconsax-react";
 import { LikeBtn } from "@/global-components/Buttons/LikeBtn/LikeBtn";
+import { AddBtn } from "@/global-components/Buttons/AddBtn/AddBtn";
+import { PlayBtn } from "@/global-components/Buttons/PlayBtn/PlayBtn";
 
 type LittlePopUpProps = {
   image: string;
@@ -21,35 +23,6 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
   };
 
   const buttonsClassName = "transparent";
-  const buttonsProps: {
-    className: "white" | "grey" | "transparent";
-    content: string;
-    onClick: () => void;
-    icon: ReactElement<IconProps>;
-  }[] = [
-    {
-      className: "white",
-      content: "",
-      onClick: handlePlayClick,
-      icon: <Play size="14" variant="Bold" />,
-    },
-    {
-      className: "transparent",
-      content: "",
-      onClick: handlePlayClick,
-      icon: <Add size="16" />,
-    },
-  ];
-  const buttons = buttonsProps.map((button, index) => (
-    <Button
-      key={index}
-      className={button.className}
-      content={button.content}
-      onClick={button.onClick}
-      icon={button.icon}
-      circle={true}
-    />
-  ));
 
   return (
     <div className={popUpClassName}>
@@ -57,7 +30,8 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
       <div className="little-pop-up-text">
         <div className="little-pop-up-text-buttons">
           <div className="little-pop-up-text-buttons-group">
-            {buttons}
+            <PlayBtn className="white" />
+            <AddBtn className={buttonsClassName} />
             <LikeBtn
               handleOnClick={handleLikeClick}
               className={buttonsClassName}
