@@ -2,7 +2,7 @@ import React from "react";
 import "./PlayBtn.scss";
 import { Play } from "iconsax-react";
 import { Button } from "@/global-components/Buttons/Button/Button";
-import { setActive } from "@/app/Stores/reducers/Video/videoSlice";
+import { setActiveVideo } from "@/app/Stores/reducers/Video/videoSlice";
 import { useAppDispatch } from "@/app/hooks";
 
 type PlayBtnProps = {
@@ -13,7 +13,7 @@ export const PlayBtn = ({ className }: PlayBtnProps) => {
   const dispatch = useAppDispatch();
 
   const handlePlayClick = () => {
-    dispatch(setActive(true));
+    dispatch(setActiveVideo(true));
   };
   return (
     <div className="play-btn">

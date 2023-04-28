@@ -1,22 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface IVideoState {
-  active: boolean;
+  activeVideo: boolean;
 }
 
 const initialState: IVideoState = {
-  active: false,
+  activeVideo: false,
 };
 
 export const videoSlice = createSlice({
   name: "video",
   initialState,
   reducers: {
-    setActive: (state, action: PayloadAction<boolean>) => {
-      state.active = action.payload;
+    setActiveVideo: (state, action: PayloadAction<boolean>) => {
+      state.activeVideo = action.payload;
     },
   },
 });
 
-export const { setActive } = videoSlice.actions;
+export const { setActiveVideo } = videoSlice.actions;
 export default videoSlice.reducer;
