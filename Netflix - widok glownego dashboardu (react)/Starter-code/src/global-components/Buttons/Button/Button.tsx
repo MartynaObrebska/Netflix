@@ -18,12 +18,12 @@ export const Button = ({
   circle,
 }: ButtonProps) => {
   return (
-    <button
+    <div
       className={`button ${className} ${circle ? "circle" : ""}`}
       onClick={onClick}
     >
       {icon}
       {content}
-    </button>
+    </div>
   );
 };

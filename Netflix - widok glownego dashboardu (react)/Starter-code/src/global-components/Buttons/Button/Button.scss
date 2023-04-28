@@ -1,6 +1,7 @@
 @import "../../../global-styles/style.scss";
 
 .button {
+    box-sizing: border-box;
     border: 1px solid;
     border-radius: 400px;
     padding: 17px 15px;
