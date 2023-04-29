@@ -1,1 +1,15 @@
 @import "../../../global-styles/style.scss";
+.btn {
+    display: none;
+    &.display {
+        display: block;
+    }
+    &.active {
+        .button {
+            border-color: $color-primary-white
+        }
+    }
+    &-container {
+        position: relative;
+    }
+}

@@ -23,10 +23,6 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
   };
   const popUpClassName = `little-pop-up ${active ? "active" : ""}`;
 
-  const handleLikeClick = () => {
-    console.log("like");
-  };
-
   const buttonsClassName = "transparent";
 
   return (
@@ -38,7 +34,6 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
             <PlayBtn className="white" />
             <AddBtn className={buttonsClassName} />
             <LikeBtn
-              handleOnClick={handleLikeClick}
               className={buttonsClassName}
             />
           </div>

@@ -1,0 +1,29 @@
+@import "../../../global-styles/style.scss";
+
+.like-tooltip {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(0%);
+    @include flex(row, space-between, center);
+    border-radius: 50px;
+    padding: 4px 8px;
+    background-color: $color-surface-light;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.24);
+    opacity: 0;
+    transition: .4s ease-in;
+    &.open {
+        transform: translate(-50%, -50%) scaleX(100%);
+        opacity: 1;
+    }
+    .btn {
+        display: block;
+        .button {
+            border-color: transparent;
+            &:hover {
+                border-color: $color-border-light;
+            }
+        }
+    }
+}
