@@ -1,5 +1,6 @@
 @import "../../../global-styles/style.scss";
 .btn {
+    position: relative;
     display: none;
     &.display {
         display: block;

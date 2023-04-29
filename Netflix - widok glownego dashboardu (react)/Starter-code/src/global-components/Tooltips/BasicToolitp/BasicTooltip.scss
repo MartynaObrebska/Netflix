@@ -1,0 +1,33 @@
+@import "../../../global-styles/style.scss";
+
+.basic-tooltip {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, calc(-10px - 100%));
+    height: 24px;
+    min-width: 88px;
+    padding: 4px 8px 6px;
+    @include flex(row, center, center);
+    background-color: $color-primary-white;
+    border-radius: 8px;
+    @include txtDesktopXxs;
+    display: none;
+    &.open {
+        display: flex;
+    }
+    &-content {
+        padding-top: 3px;
+        color: $color-primary-grey;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -7px;
+        border-width: 6px;
+        border-style: solid;
+        border-color: $color-primary-white transparent transparent transparent;
+    }
+}

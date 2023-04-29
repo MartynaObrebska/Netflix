@@ -49,6 +49,12 @@
                     @include flex(row, center, center);
                     gap: 8px;
                 }
+                .more-info-btn {
+                    position: relative;
+                    .basic-tooltip {
+                        min-width: 45px;
+                    }
+                }
             }
             &-slider-section {
                 @include txtDesktopXxs;

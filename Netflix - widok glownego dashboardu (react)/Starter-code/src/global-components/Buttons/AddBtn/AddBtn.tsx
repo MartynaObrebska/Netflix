@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./AddBtn.scss";
 import { Add, TickCircle } from "iconsax-react";
 import { Button } from "@/global-components/Buttons/Button/Button";
+import { BasicTooltip } from "@/global-components/Tooltips/BasicToolitp/BasicTooltip";
 
 type AddBtnProps = {
   className: "white" | "grey" | "transparent";
@@ -9,10 +10,17 @@ type AddBtnProps = {
 
 export const AddBtn = ({ className }: AddBtnProps) => {
   const [active, setActive] = useState(false);
-  const handleOnClick = () => setActive(!active);
+  const [openInfo, setOpenInfo] = useState(false);
+
   const mainClassName = `add-btn ${active ? "active" : ""}`;
+
+  const handleOnClick = () => setActive(!active);
   return (
-    <div className={mainClassName}>
+    <div
+      className={mainClassName}
+      onMouseEnter={() => setOpenInfo(true)}
+      onMouseLeave={() => setOpenInfo(false)}
+    >
       <Button
         className={className}
         content=""
@@ -22,6 +30,7 @@ export const AddBtn = ({ className }: AddBtnProps) => {
         }
         circle={true}
       />
+      <BasicTooltip open={openInfo} content="Dodaj do Mojej Listy" />
     </div>
   );
 };

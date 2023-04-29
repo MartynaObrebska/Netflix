@@ -3,14 +3,19 @@ import "./LikeBtn.scss";
 import { Dislike, Heart, Like1 } from "iconsax-react";
 import { Button } from "@/global-components/Buttons/Button/Button";
 import { LikeTooltip } from "@/global-components/Tooltips/LikeTooltip/LikeTooltip";
+import { BasicTooltip } from "@/global-components/Tooltips/BasicToolitp/BasicTooltip";
 
 type LikeBtnProps = {
   className: "white" | "grey" | "transparent";
 };
 
 export const LikeBtn = ({ className }: LikeBtnProps) => {
-  const btnNames = ["dislike", "like", "love"] as const;
-  type IBtnNames = (typeof btnNames)[number];
+  const btnNames = [
+    { name: "dislike", info: "To nie dla mnie" },
+    { name: "like", info: "Podoba mi się" },
+    { name: "love", info: "Uwielbiam to" },
+  ] as const;
+  type IBtnNames = (typeof btnNames)[number]["name"];
   const [display, setDisplay] = useState<IBtnNames>("like");
   const [active, setActive] = useState<IBtnNames | null>(null);
   const [open, setOpen] = useState(false);
@@ -24,10 +29,17 @@ export const LikeBtn = ({ className }: LikeBtnProps) => {
       display === name ? " display" : ""
     }`;
 
-  const buttons = btnNames.map((name, index) => {
+  const buttons = btnNames.map((btnName, index) => {
+    const [openInfo, setOpenInfo] = useState(false);
+    const { name, info } = btnName;
     const variant = active === name ? "Bold" : "Linear";
     return (
-      <div key={index} className={generateBtnClassName(name)}>
+      <div
+        key={index}
+        className={generateBtnClassName(name)}
+        onMouseEnter={() => setOpenInfo(true)}
+        onMouseLeave={() => setOpenInfo(false)}
+      >
         <Button
           className={className}
           content=""
@@ -40,6 +52,7 @@ export const LikeBtn = ({ className }: LikeBtnProps) => {
           }
           circle={true}
         />
+        <BasicTooltip open={openInfo} content={info} />
       </div>
     );
   });

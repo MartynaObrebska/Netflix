@@ -1,5 +1,6 @@
 @import "../../../global-styles/style.scss";
 .add-btn {
+    position: relative;
     &.active {
         .button {
             padding: 0;
@@ -7,5 +8,8 @@
     }
     .button {
         padding: 6px;
+    }
+    .basic-tooltip {
+        min-width: 120px;
     }
 }

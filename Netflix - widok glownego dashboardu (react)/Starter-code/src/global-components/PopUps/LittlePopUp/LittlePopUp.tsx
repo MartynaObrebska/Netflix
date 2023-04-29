@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LittlePopUp.scss";
 import { Button } from "../../Buttons/Button/Button";
 import { ArrowDown2 } from "iconsax-react";
@@ -7,6 +7,7 @@ import { AddBtn } from "@/global-components/Buttons/AddBtn/AddBtn";
 import { PlayBtn } from "@/global-components/Buttons/PlayBtn/PlayBtn";
 import { useAppDispatch } from "@/app/hooks";
 import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
+import { BasicTooltip } from "@/global-components/Tooltips/BasicToolitp/BasicTooltip";
 
 type LittlePopUpProps = {
   image: string;
@@ -16,6 +17,7 @@ type LittlePopUpProps = {
 };
 
 export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
+  const [openInfo, setOpenInfo] = useState(false);
   const dispatch = useAppDispatch();
 
   const handlePreviewClick = () => {
@@ -33,17 +35,22 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
           <div className="little-pop-up-text-buttons-group">
             <PlayBtn className="white" />
             <AddBtn className={buttonsClassName} />
-            <LikeBtn
-              className={buttonsClassName}
-            />
+            <LikeBtn className={buttonsClassName} />
           </div>
-          <Button
-            className="transparent"
-            content=""
-            onClick={handlePreviewClick}
-            icon={<ArrowDown2 size="14" />}
-            circle={true}
-          />
+          <div
+            className="more-info-btn"
+            onMouseEnter={() => setOpenInfo(true)}
+            onMouseLeave={() => setOpenInfo(false)}
+          >
+            <Button
+              className="transparent"
+              content=""
+              onClick={handlePreviewClick}
+              icon={<ArrowDown2 size="14" />}
+              circle={true}
+            />
+            <BasicTooltip open={openInfo} content="Więcej" />
+          </div>
         </div>
         <div className="little-pop-up-text-slider-section">
           <div className="slider-section-header">
