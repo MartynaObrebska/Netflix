@@ -12,10 +12,14 @@
     &.active {
         display: block;
     }
-    &-back-btn {
+    &-video {
         position: absolute;
-        top: 56px;
-        left: 56px;
-        color: $color-primary-white;
-    }       
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        .video {
+            width: 100%;
+        }
+    }   
 }

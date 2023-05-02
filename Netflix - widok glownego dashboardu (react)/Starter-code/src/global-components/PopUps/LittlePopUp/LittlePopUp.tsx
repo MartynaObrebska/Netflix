@@ -8,6 +8,7 @@ import { PlayBtn } from "@/global-components/Buttons/PlayBtn/PlayBtn";
 import { useAppDispatch } from "@/app/hooks";
 import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
 import { BasicTooltip } from "@/global-components/Tooltips/BasicToolitp/BasicTooltip";
+import { setActiveVideo } from "@/app/Stores/reducers/Video/videoSlice";
 
 type LittlePopUpProps = {
   image: string;
@@ -23,13 +24,20 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
   const handlePreviewClick = () => {
     dispatch(setPreviewActive(true));
   };
+
+  const handleImageClick = () => dispatch(setActiveVideo(true));
+
   const popUpClassName = `little-pop-up ${active ? "active" : ""}`;
 
   const buttonsClassName = "transparent";
 
   return (
     <div className={popUpClassName}>
-      <img className="little-pop-up-image" src={image} />
+      <img
+        className="little-pop-up-image"
+        src={image}
+        onClick={handleImageClick}
+      />
       <div className="little-pop-up-text">
         <div className="little-pop-up-text-buttons">
           <div className="little-pop-up-text-buttons-group">
