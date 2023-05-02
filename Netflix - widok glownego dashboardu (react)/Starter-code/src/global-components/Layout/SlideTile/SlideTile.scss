@@ -54,4 +54,12 @@
             }
         }
     }
+    &.top10 {
+        .little-pop-up {
+            width: 80px;
+            &.active {
+                width: 360px;
+            }
+        }
+    }    
 }
