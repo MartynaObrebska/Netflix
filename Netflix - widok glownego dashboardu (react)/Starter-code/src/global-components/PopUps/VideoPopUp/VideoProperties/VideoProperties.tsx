@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent } from "react";
 import "./VideoProperties.scss";
 import {
   ArrowLeft,
@@ -9,23 +9,30 @@ import {
   Next,
   Speedometer,
 } from "iconsax-react";
-import { useAppDispatch } from "@/app/hooks";
-import { setActiveVideo } from "@/app/Stores/reducers/Video/videoSlice";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import {
+  setActiveVideo,
+  setTime,
+} from "@/app/Stores/reducers/Video/videoSlice";
 import { PlayPauseBtn } from "../Buttons/PlayPauseBtn/PlayPauseBtn";
 import { VolumeBtn } from "../Buttons/VolumeBtn/VolumeBtn";
 import { ForwardBackBtns } from "../Buttons/ForwardBackBtns/ForwardBackBtns";
 
 type VideoPropertiesProps = {
-  active: boolean;
+  togglePlay: (state: "play" | "pause" | "toggle") => void;
 };
 
-export const VideoProperties = ({ active }: VideoPropertiesProps) => {
-  const [time, setTime] = useState(3984);
+export const VideoProperties = ({ togglePlay }: VideoPropertiesProps) => {
   const dispatch = useAppDispatch();
+  const { time, activeProperties, video } = useAppSelector(
+    (state) => state.video
+  );
 
-  const maxTime = 3987;
+  const maxTime = video.length;
 
-  const videoPropertiesClassName = `video-properties ${active ? "active" : ""}`;
+  const videoPropertiesClassName = `video-properties ${
+    activeProperties ? "active" : ""
+  }`;
   const sliderPercentage = `${((time + 1) / maxTime) * 100}%`;
   const seriesName = "Breaking Bad";
   const episodeNumber = "E1";
@@ -34,10 +41,11 @@ export const VideoProperties = ({ active }: VideoPropertiesProps) => {
   const generateClockPart = (part: number) =>
     part >= 10 ? part : part > 0 ? `0${part}` : "00";
 
-  const generateClock = (time: number) => {
-    const hours = time > 3600 ? Math.floor(time / 3600) : 0;
-    const min = time > 60 ? Math.floor((time - hours * 3600) / 60) : 0;
-    const sec = time - min * 60 - hours * 3600;
+  const generateClock = (time: number, maxTime: number) => {
+    const remTime = maxTime - time;
+    const hours = remTime > 3600 ? Math.floor(remTime / 3600) : 0;
+    const min = remTime > 60 ? Math.floor((remTime - hours * 3600) / 60) : 0;
+    const sec = remTime - min * 60 - hours * 3600;
     return `${generateClockPart(hours)}:${generateClockPart(
       min
     )}:${generateClockPart(sec)}`;
@@ -45,6 +53,11 @@ export const VideoProperties = ({ active }: VideoPropertiesProps) => {
 
   const handleReturnOnClick = () => {
     dispatch(setActiveVideo(false));
+    togglePlay("pause");
+  };
+
+  const handleTimeIndicator = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setTime(Number(e.target.value)));
   };
 
   return (
@@ -65,16 +78,19 @@ export const VideoProperties = ({ active }: VideoPropertiesProps) => {
               min="0"
               max={`${maxTime}`}
               value={time}
+              onChange={(e) => handleTimeIndicator(e)}
               className="slider"
             />
             <div className="color" style={{ width: sliderPercentage }} />
           </div>
-          <p className="low-section-time-section-time">{generateClock(time)}</p>
+          <p className="low-section-time-section-time">
+            {generateClock(time, maxTime)}
+          </p>
         </div>
         <div className="low-section-icons">
           <div className="low-section-icons-left">
-            <PlayPauseBtn />
-            <ForwardBackBtns time={time} setTime={setTime} maxTime={maxTime} />
+            <PlayPauseBtn togglePlay={togglePlay} />
+            <ForwardBackBtns maxTime={maxTime} />
             <VolumeBtn />
           </div>
           <div className="low-section-icons-middle">

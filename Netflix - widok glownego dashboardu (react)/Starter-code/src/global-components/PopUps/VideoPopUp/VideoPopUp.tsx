@@ -1,31 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./VideoPopUp.scss";
-import { useAppSelector } from "@/app/hooks";
-import netflixBgc from "@/assets/images/netflix-background.jpg";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { VideoProperties } from "./VideoProperties/VideoProperties";
+import {
+  setActiveProperties,
+  setIsPlaying,
+} from "@/app/Stores/reducers/Video/videoSlice";
 
 export const VideoPopUp = () => {
-  const active = useAppSelector((state) => state.video.activeVideo);
-  const [activeProperties, setActiveProperties] = useState(false);
+  const dispatch = useAppDispatch();
+  const { activeVideo, isPlaying, time, video } = useAppSelector(
+    (state) => state.video
+  );
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const videoPopUpClassName = `video-pop-up ${active ? "active" : ""}`;
+  const videoPopUpClassName = `video-pop-up ${activeVideo ? "active" : ""}`;
+
+  const togglePlay = () => {
+    isPlaying ? videoRef.current?.pause() : videoRef.current?.play();
+    dispatch(setIsPlaying(!isPlaying));
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setActiveProperties(false);
+      dispatch(setActiveProperties(false));
     }, 5000);
     return () => clearTimeout(timer);
-  }, [activeProperties]);
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (videoRef.current != undefined) {
+      videoRef.current.currentTime = time;
+    }
+  }, [time]);
 
   return (
     <div
       className={videoPopUpClassName}
-      onMouseMove={() => setActiveProperties(true)}
+      onMouseMove={() => dispatch(setActiveProperties(true))}
     >
       <div className="video-pop-up-video">
-        <img className="video" src={netflixBgc} />
+        <video ref={videoRef} className="video">
+          <source src={video.src} type="video/mp4" />
+        </video>
       </div>
-      <VideoProperties active={activeProperties} />
+      <VideoProperties togglePlay={togglePlay} />
     </div>
   );
 };

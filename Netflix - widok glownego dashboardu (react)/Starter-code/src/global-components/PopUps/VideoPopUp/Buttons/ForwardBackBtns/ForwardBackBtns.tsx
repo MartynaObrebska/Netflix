@@ -1,27 +1,27 @@
 import React from "react";
 import "./ForwardBackBtns.scss";
 import { Backward10Seconds, Forward10Seconds } from "iconsax-react";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { setTime } from "@/app/Stores/reducers/Video/videoSlice";
 
 type ForwardBackBtnProps = {
-  time: number;
-  setTime: React.Dispatch<React.SetStateAction<number>>;
   maxTime: number;
 };
 
-export const ForwardBackBtns = ({
-  time,
-  setTime,
-  maxTime,
-}: ForwardBackBtnProps) => {
+export const ForwardBackBtns = ({ maxTime }: ForwardBackBtnProps) => {
+  const dispatch = useAppDispatch();
+  const time = useAppSelector((state) => state.video.time);
   const handleClick = (forward: boolean) =>
-    setTime(
-      forward
-        ? time >= maxTime - 10
-          ? maxTime
-          : time + 10
-        : time < 10
-        ? 0
-        : time - 10
+    dispatch(
+      setTime(
+        forward
+          ? time >= maxTime - 10
+            ? maxTime
+            : time + 10
+          : time < 10
+          ? 0
+          : time - 10
+      )
     );
 
   return (

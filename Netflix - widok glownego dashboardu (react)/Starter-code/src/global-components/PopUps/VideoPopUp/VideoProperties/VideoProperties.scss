@@ -2,7 +2,7 @@
 
 .video-properties {
     opacity: 0;
-    z-index: 20;
+    z-index: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -39,7 +39,7 @@
             width: 100%;
             &-bar {
                 position: relative;
-                width: 96%;
+                width: 93%;
                 .slider {
                     -webkit-appearance: none;
                     width: 100%;
