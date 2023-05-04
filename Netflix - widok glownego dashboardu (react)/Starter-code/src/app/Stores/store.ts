@@ -8,6 +8,10 @@ export const store = configureStore({
     video: videoReducer,
     preview: previewReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export type AppDispatch = typeof store.dispatch;

@@ -18,13 +18,9 @@ import { PlayPauseBtn } from "../Buttons/PlayPauseBtn/PlayPauseBtn";
 import { VolumeBtn } from "../Buttons/VolumeBtn/VolumeBtn";
 import { ForwardBackBtns } from "../Buttons/ForwardBackBtns/ForwardBackBtns";
 
-type VideoPropertiesProps = {
-  togglePlay: (state: "play" | "pause" | "toggle") => void;
-};
-
-export const VideoProperties = ({ togglePlay }: VideoPropertiesProps) => {
+export const VideoProperties = () => {
   const dispatch = useAppDispatch();
-  const { time, activeProperties, video } = useAppSelector(
+  const { time, activeProperties, video, videoStateRef } = useAppSelector(
     (state) => state.video
   );
 
@@ -42,7 +38,7 @@ export const VideoProperties = ({ togglePlay }: VideoPropertiesProps) => {
     part >= 10 ? part : part > 0 ? `0${part}` : "00";
 
   const generateClock = (time: number, maxTime: number) => {
-    const remTime = maxTime - time;
+    const remTime = maxTime - Math.floor(time);
     const hours = remTime > 3600 ? Math.floor(remTime / 3600) : 0;
     const min = remTime > 60 ? Math.floor((remTime - hours * 3600) / 60) : 0;
     const sec = remTime - min * 60 - hours * 3600;
@@ -53,11 +49,13 @@ export const VideoProperties = ({ togglePlay }: VideoPropertiesProps) => {
 
   const handleReturnOnClick = () => {
     dispatch(setActiveVideo(false));
-    togglePlay("pause");
   };
 
   const handleTimeIndicator = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(setTime(Number(e.target.value)));
+    if (videoStateRef?.current != undefined) {
+      videoStateRef.current.currentTime = Number(e.target.value);
+    }
   };
 
   return (
@@ -89,8 +87,8 @@ export const VideoProperties = ({ togglePlay }: VideoPropertiesProps) => {
         </div>
         <div className="low-section-icons">
           <div className="low-section-icons-left">
-            <PlayPauseBtn togglePlay={togglePlay} />
-            <ForwardBackBtns maxTime={maxTime} />
+            <PlayPauseBtn />
+            <ForwardBackBtns />
             <VolumeBtn />
           </div>
           <div className="low-section-icons-middle">

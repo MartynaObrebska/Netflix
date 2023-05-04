@@ -4,21 +4,23 @@ import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { VideoProperties } from "./VideoProperties/VideoProperties";
 import {
   setActiveProperties,
-  setIsPlaying,
+  setTime,
+  setVideoRef,
 } from "@/app/Stores/reducers/Video/videoSlice";
 
 export const VideoPopUp = () => {
   const dispatch = useAppDispatch();
-  const { activeVideo, isPlaying, time, video } = useAppSelector(
+  const { activeVideo, video, videoStateRef } = useAppSelector(
     (state) => state.video
   );
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const videoPopUpClassName = `video-pop-up ${activeVideo ? "active" : ""}`;
 
-  const togglePlay = () => {
-    isPlaying ? videoRef.current?.pause() : videoRef.current?.play();
-    dispatch(setIsPlaying(!isPlaying));
+  const handleOnTimeUpdate = () => {
+    if (videoStateRef?.current != undefined) {
+      dispatch(setTime(videoStateRef.current.currentTime));
+    }
   };
 
   useEffect(() => {
@@ -29,10 +31,8 @@ export const VideoPopUp = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (videoRef.current != undefined) {
-      videoRef.current.currentTime = time;
-    }
-  }, [time]);
+    dispatch(setVideoRef(videoRef));
+  }, [videoRef]);
 
   return (
     <div
@@ -40,11 +40,15 @@ export const VideoPopUp = () => {
       onMouseMove={() => dispatch(setActiveProperties(true))}
     >
       <div className="video-pop-up-video">
-        <video ref={videoRef} className="video">
+        <video
+          onTimeUpdate={handleOnTimeUpdate}
+          ref={videoRef}
+          className="video"
+        >
           <source src={video.src} type="video/mp4" />
         </video>
       </div>
-      <VideoProperties togglePlay={togglePlay} />
+      <VideoProperties />
     </div>
   );
 };

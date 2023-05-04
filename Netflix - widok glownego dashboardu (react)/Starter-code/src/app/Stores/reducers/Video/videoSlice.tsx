@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { MutableRefObject } from "react";
 
 type VideoState = {
   activeVideo: boolean;
@@ -15,6 +16,7 @@ type VideoState = {
     length: number;
     src: string;
   };
+  videoStateRef: MutableRefObject<HTMLVideoElement | null> | null;
 };
 
 const initialState: VideoState = {
@@ -29,6 +31,7 @@ const initialState: VideoState = {
     length: 596,
     src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
   },
+  videoStateRef: null,
 };
 
 export const videoSlice = createSlice({
@@ -47,9 +50,24 @@ export const videoSlice = createSlice({
     setTime: (state, action: PayloadAction<number>) => {
       state.time = action.payload;
     },
+    setVideoRef: (state, action) => {
+      state.videoStateRef = action.payload;
+    },
+    togglePlay: (state) => {
+      state.isPlaying
+        ? state.videoStateRef?.current?.pause()
+        : state.videoStateRef?.current?.play();
+      state.isPlaying = !state.isPlaying;
+    },
   },
 });
 
-export const { setActiveVideo, setIsPlaying, setActiveProperties, setTime } =
-  videoSlice.actions;
+export const {
+  setActiveVideo,
+  setIsPlaying,
+  setActiveProperties,
+  setTime,
+  setVideoRef,
+  togglePlay,
+} = videoSlice.actions;
 export default videoSlice.reducer;

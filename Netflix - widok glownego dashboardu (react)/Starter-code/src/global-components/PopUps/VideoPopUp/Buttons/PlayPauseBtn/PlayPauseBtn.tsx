@@ -1,13 +1,11 @@
 import React from "react";
 import "./PlayPauseBtn.scss";
 import { Pause, Play } from "iconsax-react";
-import { useAppSelector } from "@/app/hooks";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { togglePlay } from "@/app/Stores/reducers/Video/videoSlice";
 
-type PlayPauseBtnProps = {
-  togglePlay: (state: "play" | "pause" | "toggle") => void;
-};
-
-export const PlayPauseBtn = ({ togglePlay }: PlayPauseBtnProps) => {
+export const PlayPauseBtn = () => {
+  const dispatch = useAppDispatch();
   const isPlaying = useAppSelector((state) => state.video.isPlaying);
   const generatePlayClassName = (name: "play" | "pause") =>
     `play-btn ${name} ${
@@ -19,7 +17,7 @@ export const PlayPauseBtn = ({ togglePlay }: PlayPauseBtnProps) => {
   return (
     <div
       className="icons play-btn-container"
-      onClick={() => togglePlay("toggle")}
+      onClick={() => dispatch(togglePlay())}
     >
       <div className={generatePlayClassName("play")}>
         <Play size="50" />
