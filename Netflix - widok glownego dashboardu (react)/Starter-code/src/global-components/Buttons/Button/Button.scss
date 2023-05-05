@@ -11,6 +11,7 @@
     @include tabletBreakpoint {
         padding: 17px 39px;
     }
+    cursor: pointer;
     &.white {
         background-color: $color-primary-white;
         color: $color-backround;
