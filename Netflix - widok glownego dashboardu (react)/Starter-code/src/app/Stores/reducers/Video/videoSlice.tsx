@@ -53,7 +53,16 @@ export const videoSlice = createSlice({
     setVideoRef: (state, action) => {
       state.videoStateRef = action.payload;
     },
-    togglePlay: (state) => {
+    togglePlay: (state, action: PayloadAction<"play" | "pause" | "toggle">) => {
+      if (action?.payload === "play") {
+        state.videoStateRef?.current?.play();
+        state.isPlaying = true;
+        return;
+      } else if (action?.payload === "pause") {
+        state.videoStateRef?.current?.pause();
+        state.isPlaying = false;
+        return;
+      }
       state.isPlaying
         ? state.videoStateRef?.current?.pause()
         : state.videoStateRef?.current?.play();

@@ -17,7 +17,7 @@ export const PlayPauseBtn = () => {
   return (
     <div
       className="icons play-btn-container"
-      onClick={() => dispatch(togglePlay())}
+      onClick={() => dispatch(togglePlay("toggle"))}
     >
       <div className={generatePlayClassName("play")}>
         <Play size="50" />

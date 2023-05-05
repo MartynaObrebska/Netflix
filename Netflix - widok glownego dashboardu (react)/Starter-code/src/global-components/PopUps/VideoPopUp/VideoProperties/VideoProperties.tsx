@@ -13,6 +13,7 @@ import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import {
   setActiveVideo,
   setTime,
+  togglePlay,
 } from "@/app/Stores/reducers/Video/videoSlice";
 import { PlayPauseBtn } from "../Buttons/PlayPauseBtn/PlayPauseBtn";
 import { VolumeBtn } from "../Buttons/VolumeBtn/VolumeBtn";
@@ -49,6 +50,7 @@ export const VideoProperties = () => {
 
   const handleReturnOnClick = () => {
     dispatch(setActiveVideo(false));
+    dispatch(togglePlay("pause"));
   };
 
   const handleTimeIndicator = (e: ChangeEvent<HTMLInputElement>) => {

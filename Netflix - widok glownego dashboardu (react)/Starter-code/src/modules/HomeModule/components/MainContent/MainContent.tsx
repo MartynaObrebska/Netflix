@@ -5,7 +5,10 @@ import WednesdayLogo from "@/assets/images/logo_wednesday.png";
 import { Button } from "@/global-components/Buttons/Button/Button";
 import { Play, InfoCircle } from "iconsax-react";
 import { useAppDispatch } from "@/app/hooks";
-import { setActiveVideo } from "@/app/Stores/reducers/Video/videoSlice";
+import {
+  setActiveVideo,
+  togglePlay,
+} from "@/app/Stores/reducers/Video/videoSlice";
 import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
 
 export const MainContent: React.FC = () => {
@@ -13,6 +16,7 @@ export const MainContent: React.FC = () => {
 
   const handlePlayClick = () => {
     dispatch(setActiveVideo(true));
+    dispatch(togglePlay("play"));
   };
 
   const handleMoreInfoClick = () => {

@@ -8,7 +8,10 @@ import { PlayBtn } from "@/global-components/Buttons/PlayBtn/PlayBtn";
 import { useAppDispatch } from "@/app/hooks";
 import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
 import { BasicTooltip } from "@/global-components/Tooltips/BasicToolitp/BasicTooltip";
-import { setActiveVideo } from "@/app/Stores/reducers/Video/videoSlice";
+import {
+  setActiveVideo,
+  togglePlay,
+} from "@/app/Stores/reducers/Video/videoSlice";
 
 type LittlePopUpProps = {
   image: string;
@@ -25,7 +28,10 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
     dispatch(setPreviewActive(true));
   };
 
-  const handleImageClick = () => dispatch(setActiveVideo(true));
+  const handleImageClick = () => {
+    dispatch(setActiveVideo(true));
+    dispatch(togglePlay("play"));
+  };
 
   const popUpClassName = `little-pop-up ${active ? "active" : ""}`;
 
