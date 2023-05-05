@@ -114,4 +114,9 @@
         @content;
     }
 };
+@mixin desktopLgBreakpoint {
+    @media (min-width: $screen-desktop-lg) and (min-height: $screen-height-desktop){
+        @content;
+    }
+};
    
