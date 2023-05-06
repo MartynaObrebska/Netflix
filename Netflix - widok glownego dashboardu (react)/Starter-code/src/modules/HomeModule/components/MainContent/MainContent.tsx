@@ -3,21 +3,13 @@ import "./MainContent.scss";
 import Top10Img from "@/assets/images/top10.png";
 import WednesdayLogo from "@/assets/images/logo_wednesday.png";
 import { Button } from "@/global-components/Buttons/Button/Button";
-import { Play, InfoCircle } from "iconsax-react";
+import { InfoCircle } from "iconsax-react";
 import { useAppDispatch } from "@/app/hooks";
-import {
-  setActiveVideo,
-  togglePlay,
-} from "@/app/Stores/reducers/Video/videoSlice";
 import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
+import { PlayBtn } from "@/global-components/Buttons/PlayBtn/PlayBtn";
 
 export const MainContent: React.FC = () => {
   const dispatch = useAppDispatch();
-
-  const handlePlayClick = () => {
-    dispatch(setActiveVideo(true));
-    dispatch(togglePlay("play"));
-  };
 
   const handleMoreInfoClick = () => {
     dispatch(setPreviewActive(true));
@@ -38,12 +30,7 @@ export const MainContent: React.FC = () => {
         </p>
       </div>
       <div className="buttons">
-        <Button
-          className="white"
-          content="Odtwórz"
-          onClick={handlePlayClick}
-          icon={<Play size="20" variant="Bold" />}
-        />
+        <PlayBtn className="white" content="Odtwórz" />
         <Button
           className="grey"
           content="Więcej informacji"

@@ -47,7 +47,7 @@ export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
       <div className="little-pop-up-text">
         <div className="little-pop-up-text-buttons">
           <div className="little-pop-up-text-buttons-group">
-            <PlayBtn className="white" />
+            <PlayBtn className="white" content="" />
             <AddBtn className={buttonsClassName} />
             <LikeBtn className={buttonsClassName} />
           </div>

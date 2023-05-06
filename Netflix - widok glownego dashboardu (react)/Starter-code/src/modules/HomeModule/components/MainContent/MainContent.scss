@@ -60,5 +60,12 @@
     .buttons {
         @include flex;
         gap: 12px;
+        .button {
+            padding: 18px 40px;
+            svg {
+                height: 20px;
+                width: 20px;
+            }
+        }
     }
 }
