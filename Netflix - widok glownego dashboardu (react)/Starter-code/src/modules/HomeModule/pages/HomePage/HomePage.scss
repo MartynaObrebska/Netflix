@@ -1,3 +1,8 @@
 .home-page {
     overflow: hidden;
+    &.disabled {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
 }
