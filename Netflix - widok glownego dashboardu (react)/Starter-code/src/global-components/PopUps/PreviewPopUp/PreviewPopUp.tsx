@@ -7,6 +7,7 @@ import { AddBtn } from "@/global-components/Buttons/AddBtn/AddBtn";
 import { LikeBtn } from "@/global-components/Buttons/LikeBtn/LikeBtn";
 import { PlayBtn } from "@/global-components/Buttons/PlayBtn/PlayBtn";
 import { MaturityRatingIcon } from "@/global-components/Icons/MaturityRatingIcon/MaturityRatingIcon";
+import { SeasonDropdown } from "./Season Dropdown/SeasonDropdown";
 
 export const PreviewPopUp = () => {
   const active = useAppSelector((state) => state.preview.active);
@@ -22,6 +23,9 @@ export const PreviewPopUp = () => {
     maturityRating,
     seasons,
   } = useAppSelector((state) => state.preview.content);
+  const selectedSeason = useAppSelector(
+    (state) => state.preview.selectedSeason
+  );
   const dispatch = useAppDispatch();
 
   const handleCloseOnClick = () => {
@@ -120,9 +124,12 @@ export const PreviewPopUp = () => {
               <div className="episodes-header-left">
                 <div className="title">Episodes</div>
                 <div className="description">
-                  <span className="season">Sezon {seasons[0].number}:</span>
+                  <span className="season">Sezon {selectedSeason}:</span>
                   {maturityRatingContent}
                 </div>
+              </div>
+              <div className="episodes-header-right">
+                <SeasonDropdown />
               </div>
             </div>
           </div>

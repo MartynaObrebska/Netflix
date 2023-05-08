@@ -8,6 +8,7 @@ type ButtonProps = {
   content: string;
   onClick: () => void;
   circle?: boolean;
+  contentFirst?: boolean;
 };
 
 export const Button = ({
@@ -16,14 +17,16 @@ export const Button = ({
   onClick,
   icon,
   circle,
+  contentFirst,
 }: ButtonProps) => {
   return (
     <div
       className={`button ${className} ${circle ? "circle" : ""}`}
       onClick={onClick}
     >
+      {contentFirst && content}
       {icon}
-      {content}
+      {!contentFirst && content}
     </div>
   );
 };

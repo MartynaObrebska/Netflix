@@ -28,6 +28,7 @@ interface IPreviewState {
       }[];
     }[];
   };
+  selectedSeason: number;
 }
 
 const initialState: IPreviewState = {
@@ -296,6 +297,7 @@ const initialState: IPreviewState = {
       },
     ],
   },
+  selectedSeason: 1,
 };
 
 export const previewSlice = createSlice({
@@ -334,8 +336,12 @@ export const previewSlice = createSlice({
     ) => {
       state.content = action.payload;
     },
+    setSelectedSeason: (state, action: PayloadAction<number>) => {
+      state.selectedSeason = action.payload;
+    },
   },
 });
 
-export const { setPreviewActive, setContent } = previewSlice.actions;
+export const { setPreviewActive, setContent, setSelectedSeason } =
+  previewSlice.actions;
 export default previewSlice.reducer;
