@@ -1,7 +1,65 @@
 @import "../../../../global-styles/style.scss";
 
 .season-dropdown {
-    .button {
+    position: relative;
+    @include flex(row, flex-end);
+    .button.transparent {
         padding: 7px 24px;
+        width: fit-content;
+        background: $color-surface-light;
+        border: 1px solid $color-border-dark;
+        @include txtMobileSm;
+        &:hover {
+            background-color: $color-surface-light-hover;
+        }
+        .arrow {
+            transition: .2s;
+            &.open {
+                transition: .1s;
+                transform: rotate(180deg);
+            }
+        }
+    }
+    &-menu {
+        opacity: 0;
+        padding: 8px 0;
+        position: absolute;
+        top: 43px;
+        right: 0;
+        width: max-content;
+        @include flex(column, flex-start, stretch);
+        align-content: stretch;
+        background-color: $color-surface-light;
+        border-radius: 12px;
+        color: $color-primary-white;
+        border: 1px solid $color-border-dark;
+        overflow: hidden;
+        transition: .1s;
+        &-item {
+            background-color: transparent;
+            border: none;
+            @include flex(row, flex-start, stretch);
+            &:hover {
+                background-color: $color-surface-light-hover;
+            }
+            p {
+                padding: 16px;
+                @include txtMobileSm;
+                span {
+                    padding-left: 12px;
+                    color: $color-primary-grey;
+                }
+            }
+        }
+        &-separator {
+            box-sizing: border-box;
+            width: calc(100% - 32px);
+            height: 1px;
+            margin: 8px 16px;
+            background-color: $color-border-dark;
+        }
+        &.open {
+            opacity: 1;
+        }
     }
 }

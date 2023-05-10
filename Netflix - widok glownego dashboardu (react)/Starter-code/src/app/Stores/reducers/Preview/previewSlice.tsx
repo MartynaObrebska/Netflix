@@ -104,9 +104,50 @@ const initialState: IPreviewState = {
         ],
       },
       {
-        number: 1,
+        number: 2,
         title: null,
         episodes: [
+          {
+            number: 1,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
+          {
+            number: 2,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
+          {
+            number: 3,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
+          {
+            number: 4,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
+        ],
+      },
+      {
+        number: 3,
+        title: null,
+        episodes: [
+          {
+            number: 1,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
           {
             number: 1,
             title: "Pilot",
@@ -152,9 +193,45 @@ const initialState: IPreviewState = {
         ],
       },
       {
-        number: 1,
+        number: 4,
         title: null,
         episodes: [
+          {
+            number: 1,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
+          {
+            number: 1,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
+          {
+            number: 1,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
+
+          {
+            number: 1,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
+          {
+            number: 1,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
           {
             number: 1,
             title: "Pilot",
@@ -200,7 +277,7 @@ const initialState: IPreviewState = {
         ],
       },
       {
-        number: 1,
+        number: 5,
         title: null,
         episodes: [
           {
@@ -211,46 +288,48 @@ const initialState: IPreviewState = {
             duration: 58,
           },
           {
-            number: 2,
+            number: 1,
             title: "Pilot",
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
           },
           {
-            number: 3,
+            number: 1,
             title: "Pilot",
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
           },
           {
-            number: 4,
+            number: 1,
+            title: "Pilot",
+            description:
+              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
+            duration: 58,
+          },
+
+          {
+            number: 1,
             title: "Pilot",
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
           },
           {
-            number: 5,
+            number: 1,
             title: "Pilot",
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
           },
           {
-            number: 6,
+            number: 1,
             title: "Pilot",
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
           },
-        ],
-      },
-      {
-        number: 1,
-        title: null,
-        episodes: [
           {
             number: 1,
             title: "Pilot",
