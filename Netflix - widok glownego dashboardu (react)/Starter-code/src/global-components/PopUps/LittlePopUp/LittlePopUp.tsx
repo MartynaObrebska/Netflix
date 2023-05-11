@@ -13,12 +13,12 @@ import {
   togglePlay,
 } from "@/app/Stores/reducers/Video/videoSlice";
 
-type LittlePopUpProps = {
+interface LittlePopUpProps {
   image: string;
   top10?: boolean;
   rank?: number;
   active: boolean;
-};
+}
 
 export const LittlePopUp = ({ image, active }: LittlePopUpProps) => {
   const [openInfo, setOpenInfo] = useState(false);

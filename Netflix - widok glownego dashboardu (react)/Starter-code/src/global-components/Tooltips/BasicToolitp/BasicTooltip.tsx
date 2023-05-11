@@ -1,10 +1,10 @@
 import React from "react";
 import "./BasicTooltip.scss";
 
-type basicTooltipProps = {
+interface basicTooltipProps {
   open: boolean;
   content: string;
-};
+}
 
 export const BasicTooltip = ({ open, content }: basicTooltipProps) => {
   const tooltipClassName = `basic-tooltip ${open ? "open" : ""}`;

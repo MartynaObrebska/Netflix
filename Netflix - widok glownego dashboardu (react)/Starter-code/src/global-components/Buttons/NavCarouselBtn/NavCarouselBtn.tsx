@@ -3,12 +3,12 @@ import "./NavCarouselBtn.scss";
 import { IconProps } from "iconsax-react";
 import { Button } from "@/global-components/Buttons/Button/Button";
 
-type NavCarouselBtnProps = {
+interface NavCarouselBtnProps {
   back?: boolean;
   top10?: boolean;
   handleOnClick: () => void;
   icon: ReactElement<IconProps>;
-};
+}
 
 export const NavCarouselBtn = ({
   back,

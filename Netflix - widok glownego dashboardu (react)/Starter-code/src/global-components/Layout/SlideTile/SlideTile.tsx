@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./SlideTile.scss";
 import { LittlePopUp } from "../../PopUps/LittlePopUp/LittlePopUp";
 
-type SlideTileProps = {
+interface SlideTileProps {
   image: string;
   top10?: boolean;
   rank?: number;
-};
+}
 
 export const SlideTile = ({ image, top10, rank }: SlideTileProps) => {
   const [active, setActive] = useState(false);

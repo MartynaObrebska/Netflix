@@ -5,9 +5,9 @@ import { Button } from "@/global-components/Buttons/Button/Button";
 import { LikeTooltip } from "@/global-components/Tooltips/LikeTooltip/LikeTooltip";
 import { BasicTooltip } from "@/global-components/Tooltips/BasicToolitp/BasicTooltip";
 
-type LikeBtnProps = {
+interface LikeBtnProps {
   className: "white" | "grey" | "transparent";
-};
+}
 
 export const LikeBtn = ({ className }: LikeBtnProps) => {
   const btnNames = [

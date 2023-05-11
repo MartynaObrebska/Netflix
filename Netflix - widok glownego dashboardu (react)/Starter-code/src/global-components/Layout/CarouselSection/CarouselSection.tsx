@@ -3,11 +3,11 @@ import "./CarouselSection.scss";
 import { ArrowRight2 } from "iconsax-react";
 import { Carousel } from "../Carousel/Carousel";
 
-type CarouselSectionProps = {
+interface CarouselSectionProps {
   title: string;
   slides: JSX.Element[];
   top10?: boolean;
-};
+}
 
 export const CarouselSection = ({
   title,

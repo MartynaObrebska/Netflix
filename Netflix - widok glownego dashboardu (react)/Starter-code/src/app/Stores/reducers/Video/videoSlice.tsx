@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { MutableRefObject } from "react";
 
-type VideoState = {
+interface VideoState {
   activeVideo: boolean;
   isPlaying: boolean;
   activeProperties: boolean;
@@ -17,7 +17,7 @@ type VideoState = {
     src: string;
   };
   videoStateRef: MutableRefObject<HTMLVideoElement | null> | null;
-};
+}
 
 const initialState: VideoState = {
   activeVideo: false,

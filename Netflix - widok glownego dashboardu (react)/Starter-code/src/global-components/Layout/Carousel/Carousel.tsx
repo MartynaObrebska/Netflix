@@ -11,10 +11,10 @@ import {
 } from "@/utility/breakpoints";
 import { ArrowRight2, ArrowLeft2 } from "iconsax-react";
 
-type CarouselProps = {
+interface CarouselProps {
   slides: JSX.Element[];
   top10?: boolean;
-};
+}
 
 export const Carousel = ({ slides, top10 }: CarouselProps) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);

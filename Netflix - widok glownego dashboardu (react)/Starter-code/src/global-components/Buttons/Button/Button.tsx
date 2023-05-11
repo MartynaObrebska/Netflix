@@ -2,14 +2,14 @@ import React, { ReactElement } from "react";
 import "./Button.scss";
 import { IconProps } from "iconsax-react";
 
-type ButtonProps = {
+interface ButtonProps {
   icon: ReactElement<IconProps>;
   className: "white" | "grey" | "transparent";
   content: string;
   onClick: () => void;
   circle?: boolean;
   contentFirst?: boolean;
-};
+}
 
 export const Button = ({
   className,

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./SeasonDropdown.scss";
 import { Button } from "@/global-components/Buttons/Button/Button";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
-import { ArrowDown2, ArrowUp2 } from "iconsax-react";
+import { ArrowDown2 } from "iconsax-react";
 import { setSelectedSeason } from "@/app/Stores/reducers/Preview/previewSlice";
 
 export const SeasonDropdown = () => {

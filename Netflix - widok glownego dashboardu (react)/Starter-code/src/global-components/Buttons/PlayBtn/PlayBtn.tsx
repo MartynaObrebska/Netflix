@@ -9,10 +9,10 @@ import {
 import { useAppDispatch } from "@/app/hooks";
 import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
 
-type PlayBtnProps = {
+interface PlayBtnProps {
   className: "white" | "grey" | "transparent";
   content: string;
-};
+}
 
 export const PlayBtn = ({ className, content }: PlayBtnProps) => {
   const dispatch = useAppDispatch();

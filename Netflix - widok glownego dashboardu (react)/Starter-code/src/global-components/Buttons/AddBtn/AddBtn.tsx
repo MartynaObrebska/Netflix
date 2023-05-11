@@ -4,9 +4,9 @@ import { Add, TickCircle } from "iconsax-react";
 import { Button } from "@/global-components/Buttons/Button/Button";
 import { BasicTooltip } from "@/global-components/Tooltips/BasicToolitp/BasicTooltip";
 
-type AddBtnProps = {
+interface AddBtnProps {
   className: "white" | "grey" | "transparent";
-};
+}
 
 export const AddBtn = ({ className }: AddBtnProps) => {
   const [active, setActive] = useState(false);
