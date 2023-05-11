@@ -25,6 +25,7 @@ interface IPreviewState {
         title: string;
         description: string;
         duration: number;
+        img: string;
       }[];
     }[];
   };
@@ -65,6 +66,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 2,
@@ -72,6 +74,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 3,
@@ -79,6 +82,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 4,
@@ -86,6 +90,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 5,
@@ -93,6 +98,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 6,
@@ -100,6 +106,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
         ],
       },
@@ -113,6 +120,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 2,
@@ -120,6 +128,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 3,
@@ -127,6 +136,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 4,
@@ -134,6 +144,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
         ],
       },
@@ -147,6 +158,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 1,
@@ -154,6 +166,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 2,
@@ -161,6 +174,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 3,
@@ -168,6 +182,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 4,
@@ -175,6 +190,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 5,
@@ -182,6 +198,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 6,
@@ -189,6 +206,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
         ],
       },
@@ -202,6 +220,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 1,
@@ -209,6 +228,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 1,
@@ -216,6 +236,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
 
           {
@@ -224,6 +245,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 1,
@@ -231,6 +253,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 1,
@@ -238,6 +261,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 2,
@@ -245,6 +269,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 3,
@@ -252,6 +277,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 4,
@@ -259,6 +285,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 5,
@@ -266,6 +293,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 6,
@@ -273,6 +301,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
         ],
       },
@@ -286,27 +315,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
-          },
-          {
-            number: 1,
-            title: "Pilot",
-            description:
-              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
-            duration: 58,
-          },
-          {
-            number: 1,
-            title: "Pilot",
-            description:
-              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
-            duration: 58,
-          },
-          {
-            number: 1,
-            title: "Pilot",
-            description:
-              "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
-            duration: 58,
+            img: image,
           },
 
           {
@@ -315,6 +324,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 1,
@@ -322,6 +332,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 1,
@@ -329,6 +340,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 1,
@@ -336,6 +348,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 2,
@@ -343,6 +356,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 3,
@@ -350,6 +364,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 4,
@@ -357,6 +372,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 5,
@@ -364,6 +380,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
           {
             number: 6,
@@ -371,6 +388,7 @@ const initialState: IPreviewState = {
             description:
               "Nauczyciel chemii w szkole średniej dowiaduje się, że ma nieuleczalnego raka płuc. Aby zapewnić byt rodzinie, bierze się za produkcję i rozprowadzanie metamfetaminy.",
             duration: 58,
+            img: image,
           },
         ],
       },
@@ -409,6 +427,7 @@ export const previewSlice = createSlice({
             title: string;
             description: string;
             duration: number;
+            img: string;
           }[];
         }[];
       }>

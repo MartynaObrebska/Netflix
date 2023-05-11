@@ -8,8 +8,10 @@ import { LikeBtn } from "@/global-components/Buttons/LikeBtn/LikeBtn";
 import { PlayBtn } from "@/global-components/Buttons/PlayBtn/PlayBtn";
 import { MaturityRatingIcon } from "@/global-components/Icons/MaturityRatingIcon/MaturityRatingIcon";
 import { SeasonDropdown } from "./Season Dropdown/SeasonDropdown";
+import { EpisodeTile } from "@/global-components/EpisodeTile/EpisodeTile";
 
 export const PreviewPopUp = () => {
+  const dispatch = useAppDispatch();
   const active = useAppSelector((state) => state.preview.active);
   const {
     title,
@@ -26,11 +28,6 @@ export const PreviewPopUp = () => {
   const selectedSeason = useAppSelector(
     (state) => state.preview.selectedSeason
   );
-  const dispatch = useAppDispatch();
-
-  const handleCloseOnClick = () => {
-    dispatch(setPreviewActive(false));
-  };
 
   const previewClassName = `preview-container ${active ? "active" : ""}`;
 
@@ -77,9 +74,21 @@ export const PreviewPopUp = () => {
     );
   });
 
+  const episodes = useAppSelector(
+    (state) => state.preview.content.seasons[selectedSeason - 1].episodes
+  );
+
+  const episodeTiles = episodes.map((episode, index) => (
+    <EpisodeTile key={index} episode={episode} />
+  ));
+
+  const handleCloseOnClick = () => {
+    dispatch(setPreviewActive(false));
+  };
+
   return (
     <div className={previewClassName}>
-      <div className="preview-backdrop" />
+      <div className="preview-backdrop" onClick={handleCloseOnClick} />
       <div className="preview">
         <div className="preview-close-btn" onClick={handleCloseOnClick}>
           <div className="bg" />
@@ -132,6 +141,7 @@ export const PreviewPopUp = () => {
                 <SeasonDropdown />
               </div>
             </div>
+            {episodeTiles}
           </div>
         </div>
       </div>

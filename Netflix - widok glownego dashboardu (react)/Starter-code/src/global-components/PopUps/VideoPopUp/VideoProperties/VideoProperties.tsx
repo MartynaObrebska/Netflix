@@ -18,6 +18,7 @@ import {
 import { PlayPauseBtn } from "../Buttons/PlayPauseBtn/PlayPauseBtn";
 import { VolumeBtn } from "../Buttons/VolumeBtn/VolumeBtn";
 import { ForwardBackBtns } from "../Buttons/ForwardBackBtns/ForwardBackBtns";
+import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
 
 export const VideoProperties = () => {
   const dispatch = useAppDispatch();
@@ -51,6 +52,7 @@ export const VideoProperties = () => {
   const handleReturnOnClick = () => {
     dispatch(setActiveVideo(false));
     dispatch(togglePlay("pause"));
+    dispatch(setPreviewActive(true));
   };
 
   const handleTimeIndicator = (e: ChangeEvent<HTMLInputElement>) => {

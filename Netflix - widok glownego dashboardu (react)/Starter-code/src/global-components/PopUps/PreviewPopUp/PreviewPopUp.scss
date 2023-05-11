@@ -6,23 +6,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 2100px;
     overflow: hidden;
     transition: .2s ease-in-out;
     &.active {
         z-index: 20;
         .preview {
             opacity: 1;
-            transform: translateX(-50%) scale(100%);
+            transform: scale(100%);
         };
     }
     .preview {
-        position: absolute;
-        top: 30px;
-        left: 50%;
-        transform: translateX(-50%) scale(80%);;
+        margin: 36px auto;
         width: 95%;
-        height: 2000px;
         background-color: $color-surface-dark;
         border-radius: 16px;
         overflow: hidden;
