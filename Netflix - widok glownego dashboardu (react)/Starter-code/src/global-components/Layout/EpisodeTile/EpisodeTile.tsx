@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./EpisodeTile.scss";
-import { PlayBtn } from "../Buttons/PlayBtn/PlayBtn";
+import { PlayBtn } from "../../Buttons/PlayBtn/PlayBtn";
 import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
 import {
   setActiveVideo,
