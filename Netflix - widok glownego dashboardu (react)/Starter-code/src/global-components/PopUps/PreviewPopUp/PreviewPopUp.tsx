@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./PreviewPopUp.scss";
 import { CloseCircle } from "iconsax-react";
 import { useAppSelector, useAppDispatch } from "@/app/hooks";
@@ -8,7 +8,7 @@ import { LikeBtn } from "@/global-components/Buttons/LikeBtn/LikeBtn";
 import { PlayBtn } from "@/global-components/Buttons/PlayBtn/PlayBtn";
 import { MaturityRatingIcon } from "@/global-components/Icons/MaturityRatingIcon/MaturityRatingIcon";
 import { SeasonDropdown } from "./Season Dropdown/SeasonDropdown";
-import { EpisodeTile } from "@/global-components/EpisodeTile/EpisodeTile";
+import { EpisodeTile } from "@/global-components/Layout/EpisodeTile/EpisodeTile";
 
 export const PreviewPopUp = () => {
   const dispatch = useAppDispatch();
@@ -22,12 +22,14 @@ export const PreviewPopUp = () => {
     cast,
     genres,
     creators,
+    categories,
     maturityRating,
     seasons,
   } = useAppSelector((state) => state.preview.content);
   const selectedSeason = useAppSelector(
     (state) => state.preview.selectedSeason
   );
+  const aboutRef = useRef<HTMLDivElement | null>(null);
 
   const previewClassName = `preview-container ${active ? "active" : ""}`;
 
@@ -55,15 +57,24 @@ export const PreviewPopUp = () => {
     { title: "Gatunki", array: genres },
   ];
 
+  const handleClickScrollToAboutSection = () => {
+    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const rightSection = rightSectionArray.map((item, index) => {
     const { title, array } = item;
     return (
       <div key={index} className={`tags ${title}`}>
         <span className="title">{title}:</span>
-        {(array.length > 3 ? [...array.slice(0, 3), "more"] : array).map(
+        {(array.length > 3 ? [...array.slice(0, 3), "więcej"] : array).map(
           (el, id) => {
             return (
-              <span key={id}>
+              <span
+                key={id}
+                onClick={
+                  el === "więcej" ? handleClickScrollToAboutSection : undefined
+                }
+              >
                 <span className={`el${id}`}>,</span>
                 <span className="element">{el}</span>
               </span>
@@ -81,6 +92,30 @@ export const PreviewPopUp = () => {
   const episodeTiles = episodes.map((episode, index) => (
     <EpisodeTile key={index} episode={episode} />
   ));
+
+  const aboutArray = [
+    { title: "Obsada", array: cast },
+    { title: "Twórcy", array: creators },
+    { title: "Gatunki", array: genres },
+    { title: "Kategorie", array: categories },
+  ];
+
+  const aboutSection = aboutArray.map((item, index) => {
+    const { title, array } = item;
+    return (
+      <div key={index} className={`tags ${title}`}>
+        <span className="title">{title}:</span>
+        {array.map((el, id) => {
+          return (
+            <span key={id}>
+              <span className={`el${id}`}>,</span>
+              <span className="element">{el}</span>
+            </span>
+          );
+        })}
+      </div>
+    );
+  });
 
   const handleCloseOnClick = () => {
     dispatch(setPreviewActive(false));
@@ -141,7 +176,13 @@ export const PreviewPopUp = () => {
                 <SeasonDropdown />
               </div>
             </div>
-            {episodeTiles}
+            <div className="episodes-list">{episodeTiles}</div>
+          </div>
+          <div className="preview-content-about" ref={aboutRef}>
+            <h2 className="about-title">
+              O tytule <span>{title}</span>
+            </h2>
+            <div className="about-list">{aboutSection}</div>
           </div>
         </div>
       </div>

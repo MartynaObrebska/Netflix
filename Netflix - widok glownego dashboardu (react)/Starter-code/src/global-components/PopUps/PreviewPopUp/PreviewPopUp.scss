@@ -121,20 +121,6 @@
                 }
                 &-right {
                     width: 33%;
-                    .tags {
-                        padding-bottom: 1em;
-                        .title {
-                            color: $color-primary-grey;
-                        }
-                        .element {
-                            padding-left: 0.3em;
-                            color: $color-primary-white;
-                            cursor: pointer;
-                            &:hover {
-                                text-decoration: underline;
-                            }
-                        }
-                    }
                 }
             }
             .el0 {
@@ -142,6 +128,7 @@
             }
             &-episodes {
                 .episodes-header {
+                    margin-bottom: 8px;
                     @include flex(row, space-between, flex-start);
                     &-left {
                         .title {
@@ -160,13 +147,40 @@
                         margin-top: 32px;
                     }
                 }
+                .episodes-list {
+                    border-top: 1px solid $color-border-dark;
+                }
             }
             .maturity-rating {
                 @include flex(row, flex-start);
                 .item {
                     padding-left: 0.3em;
                 }
-            }        
+            }  
+            &-about {
+                margin: 20px 0;
+                .about-title {
+                    padding: 20px 0;
+                    @include txtDesktopXl;
+                    span {
+                        @include txtDesktopXxl;
+                    }
+                }
+            }
+            .tags {
+                padding-bottom: 1em;
+                .title {
+                    color: $color-primary-grey;
+                }
+                .element {
+                    padding-left: 0.3em;
+                    color: $color-primary-white;
+                    cursor: pointer;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }      
         }
     }
 }

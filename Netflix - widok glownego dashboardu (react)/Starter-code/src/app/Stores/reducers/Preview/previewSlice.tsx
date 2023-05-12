@@ -13,6 +13,7 @@ interface IPreviewState {
     cast: string[];
     genres: string[];
     creators: string[];
+    categories: string[];
     maturityRating: {
       number: 0 | 7 | 10 | 13 | 16 | 18;
       description: string[];
@@ -51,6 +52,7 @@ const initialState: IPreviewState = {
     ],
     genres: ["Dramat", "Kryminał"],
     creators: ["Vince Gilligan"],
+    categories: ["Brutalny", "Mocny", "Mroczny"],
     maturityRating: {
       number: 16,
       description: ["violence", "language", "substances"],
@@ -415,6 +417,7 @@ export const previewSlice = createSlice({
         cast: string[];
         genres: string[];
         creators: string[];
+        categories: string[];
         maturityRating: {
           number: 0 | 7 | 10 | 13 | 16 | 18;
           description: string[];
