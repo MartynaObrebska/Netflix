@@ -10,9 +10,8 @@ import {
 
 export const VideoPopUp = () => {
   const dispatch = useAppDispatch();
-  const { activeVideo, video, videoStateRef } = useAppSelector(
-    (state) => state.video
-  );
+  const { activeVideo, video, videoStateRef, activeProperties } =
+    useAppSelector((state) => state.video);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const videoPopUpClassName = `video-pop-up ${activeVideo ? "active" : ""}`;
@@ -28,7 +27,7 @@ export const VideoPopUp = () => {
       dispatch(setActiveProperties(false));
     }, 5000);
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, [activeProperties]);
 
   useEffect(() => {
     dispatch(setVideoRef(videoRef));
