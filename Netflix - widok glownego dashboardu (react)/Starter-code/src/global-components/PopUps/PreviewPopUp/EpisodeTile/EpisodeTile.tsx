@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./EpisodeTile.scss";
-import { PlayBtn } from "../../Buttons/PlayBtn/PlayBtn";
+import { PlayBtn } from "../../../Buttons/PlayBtn/PlayBtn";
 import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
 import {
   setActiveVideo,
@@ -36,7 +36,7 @@ export const EpisodeTile = ({ episode }: EpisodeTileProps) => {
     >
       <div className="episode-tile-number">{number}</div>
       <div className="episode-tile-picture">
-        <img width="100%" src={img} alt={`Episode ${number}`} />
+        <img height="100%" src={img} alt={`Episode ${number}`} />
         {visiblePlayBtn && (
           <div className="playBtn-backdrop">
             <PlayBtn className="white" content="" />

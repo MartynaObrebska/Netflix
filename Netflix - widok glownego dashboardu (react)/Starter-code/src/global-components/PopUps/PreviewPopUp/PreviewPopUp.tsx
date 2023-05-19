@@ -8,7 +8,7 @@ import { LikeBtn } from "@/global-components/Buttons/LikeBtn/LikeBtn";
 import { PlayBtn } from "@/global-components/Buttons/PlayBtn/PlayBtn";
 import { MaturityRatingIcon } from "@/global-components/Icons/MaturityRatingIcon/MaturityRatingIcon";
 import { SeasonDropdown } from "./Season Dropdown/SeasonDropdown";
-import { EpisodeTile } from "@/global-components/Layout/EpisodeTile/EpisodeTile";
+import { EpisodeTile } from "@/global-components/PopUps/PreviewPopUp/EpisodeTile/EpisodeTile";
 
 export const PreviewPopUp = () => {
   const dispatch = useAppDispatch();

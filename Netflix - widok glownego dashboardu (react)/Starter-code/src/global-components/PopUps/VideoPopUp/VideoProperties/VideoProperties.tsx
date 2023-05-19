@@ -20,7 +20,13 @@ import { VolumeBtn } from "../Buttons/VolumeBtn/VolumeBtn";
 import { ForwardBackBtns } from "../Buttons/ForwardBackBtns/ForwardBackBtns";
 import { setPreviewActive } from "@/app/Stores/reducers/Preview/previewSlice";
 
-export const VideoProperties = () => {
+interface VideoPropertiesProps {
+  setActiveEpisodesPopUp: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const VideoProperties = ({
+  setActiveEpisodesPopUp,
+}: VideoPropertiesProps) => {
   const dispatch = useAppDispatch();
   const { time, activeProperties, video, videoStateRef } = useAppSelector(
     (state) => state.video
@@ -104,7 +110,11 @@ export const VideoProperties = () => {
             <div className="icons next-btn">
               <Next size="50" />
             </div>
-            <div className="icons episodes-btn">
+            <div
+              className="icons episodes-btn"
+              onMouseEnter={() => setActiveEpisodesPopUp(true)}
+              onMouseLeave={() => setActiveEpisodesPopUp(false)}
+            >
               <I3Square size="45" />
             </div>
             <div className="icons subtitles-btn">

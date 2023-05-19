@@ -1,4 +1,4 @@
-@import "../../../global-styles/style.scss";
+@import "../../../../global-styles/style.scss";
 
 .episode-tile {
     box-sizing: border-box;
@@ -13,7 +13,7 @@
     }
     &-picture {
         position: relative;
-        flex: 0 0 20%;
+        flex: 0 0 23%;
         height: 120px;
         border-radius: 16px;
         overflow: hidden;

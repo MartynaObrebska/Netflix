@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./VideoPopUp.scss";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { VideoProperties } from "./VideoProperties/VideoProperties";
@@ -6,9 +6,16 @@ import {
   setActiveProperties,
   setTime,
   setVideoRef,
+  togglePlay,
 } from "@/app/Stores/reducers/Video/videoSlice";
+import { EpisodesPopUp } from "./EpisodesPopUp/EpisodesPopUp";
 
 export const VideoPopUp = () => {
+  // const [activeNextEpisodePopUp, setActiveNextEpisodePopUp] = useState(false);
+  const [activeEpisodesPopUp, setActiveEpisodesPopUp] = useState(false);
+  // const [activeLanguagesPopUp, setActiveLanguagesPopUp] = useState(false);
+  // const [activeVideoSpeedPopUp, setActiveVideoSpeedPopUp] = useState(false);
+  // const [activeProblemsPopUp, setActiveProblemsPopUp] = useState(false);
   const dispatch = useAppDispatch();
   const { activeVideo, video, videoStateRef, activeProperties } =
     useAppSelector((state) => state.video);
@@ -38,7 +45,7 @@ export const VideoPopUp = () => {
       className={videoPopUpClassName}
       onMouseMove={() => dispatch(setActiveProperties(true))}
     >
-      <div className="video-pop-up-video">
+      <div className="video-pop-up-video" onClick={() => togglePlay("toggle")}>
         <video
           onTimeUpdate={handleOnTimeUpdate}
           ref={videoRef}
@@ -47,7 +54,11 @@ export const VideoPopUp = () => {
           <source src={video.src} type="video/mp4" />
         </video>
       </div>
-      <VideoProperties />
+      <VideoProperties setActiveEpisodesPopUp={setActiveEpisodesPopUp} />
+      <EpisodesPopUp
+        active={activeEpisodesPopUp}
+        setActive={setActiveEpisodesPopUp}
+      />
     </div>
   );
 };

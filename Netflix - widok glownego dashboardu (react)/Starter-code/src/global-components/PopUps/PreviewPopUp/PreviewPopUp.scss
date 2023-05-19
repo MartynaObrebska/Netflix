@@ -27,8 +27,8 @@
             width: 900px;
             @include desktopLgBreakpoint {
                 width: 1200px;
+            }
         }
-    }
         &-close-btn {
             z-index: 1;
             position: absolute;
