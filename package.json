@@ -2,6 +2,7 @@
   "name": "invo-academy-react-starter-with-vite",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://martynaobrebska.github.io/Netflix/",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +10,9 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
